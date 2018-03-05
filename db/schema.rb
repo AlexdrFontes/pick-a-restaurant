@@ -63,7 +63,6 @@ ActiveRecord::Schema.define(version: 20180305145925) do
     t.string "featured_image"
     t.float "user_rating"
     t.integer "phone_number"
-    t.string "cuisine"
     t.string "schedule"
     t.float "latitude"
     t.float "longitude"

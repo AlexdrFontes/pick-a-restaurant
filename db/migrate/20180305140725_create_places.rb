@@ -9,7 +9,6 @@ class CreatePlaces < ActiveRecord::Migration[5.1]
       t.string :featured_image
       t.float :user_rating
       t.integer :phone_number
-      t.string :cuisine
       t.string :schedule
       t.float :latitude
       t.float :longitude
