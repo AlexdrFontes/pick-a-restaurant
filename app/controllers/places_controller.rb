@@ -3,6 +3,11 @@ class PlacesController < ApplicationController
 
   def show
     @places = Place.all
+
+    if params.values_at(:city, :radius).all?(&:present?)
+    @places = Place.near(params[:city], params[:radius])
+    end
+
     if params[:cuisine_type].present?
       sql_query = " \
         cuisine_types.name @@ :cuisine_type \
@@ -10,9 +15,6 @@ class PlacesController < ApplicationController
       @places = @places.joins(:cuisine_types).where(sql_query, cuisine_type: "%#{params[:cuisine_type]}%")
     end
 
-    if params[:location].present?
-      @places = @places.where(city: params[:location].capitalize)
-    end
+      # @places = @places.where(address: params[:address])
   end
 end
-# OR places.city @@ :search \
