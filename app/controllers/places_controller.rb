@@ -9,7 +9,6 @@ class PlacesController < ApplicationController
       sql_query = " \
         meal_types.name @@ :meal_type \
        "
-
        @places = @places.joins(:meal_types).where(sql_query, meal_type: "%#{params[:meal_type]}%")
     end
 
