@@ -118,7 +118,6 @@ for page_number in 1..limit
         meal_types: get_type_of_meal(current_agent, schedule)
       }
       places << place
-
   end
   save(places)
 end
