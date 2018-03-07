@@ -25,6 +25,7 @@ class PlacesController < ApplicationController
       @places = @places.joins(:cuisine_types).where(sql_query, cuisine_type: "%#{params[:cuisine_type]}%")
     end
 
+    @place = @places.sample
 
       # @places = @places.where(address: params[:address])
   end
