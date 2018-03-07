@@ -1,6 +1,8 @@
 <h1>Places#show</h1>
 
-<%=  @places.sample.name %>
+<% a = @places.sample %>
+<%= a.name %>
+<% b = "Techtris House, Rua da Moeda 7, Lisbon, Portugal" %>
+<a href="tel:<%= a.phone_number %>" >Call Us</a>
 
-
-
+<%= link_to "Directions", ('https://www.google.com/maps/dir/?api=1''&origin=''&destination='+ a.address) %>
