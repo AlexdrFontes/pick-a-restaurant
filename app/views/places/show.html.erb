@@ -1,12 +1,13 @@
 
+<% a = @places.sample %>
 <div class="col-xs-12" style= "padding: 0px">
   <div class= "show-all">
-<div class="banner-show-top" style="background-image: url(<%= image_path(@places.sample.featured_image) %>);">
+<div class="banner-show-top" style="background-image: url(<%= image_path(a.featured_image) %>);">
 </div>
 
 <div class="show-down">
 
-  <h1><%=@places.sample.name %></h1>
+  <h1><%=a.name %></h1>
 
 
   </div>
@@ -15,3 +16,7 @@
 
 </div>
 </div>
+
+
+<a href="tel:<%= a.phone_number %>" >Call Us</a>
+<%= link_to "Directions", ('https://www.google.com/maps/dir/?api=1''&origin=''&destination='+ a.address) %>
