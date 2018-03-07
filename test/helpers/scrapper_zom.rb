@@ -21,7 +21,17 @@ end
 
 def get_place_average_cost_for_two(agent)
   main_cost = agent.search(".res-info-detail")
-  return main_cost.search('span')[2].text.to_s.lstrip.rstrip.gsub(/\D/,'')
+  #Para restaurantes que têm vários preços (jantar, almoço), tiramos só o de jantar
+  a = main_cost.search('span')[2].text.to_s.lstrip.rstrip
+  array = a.split('.')
+  #Bug do zomato no restaurante Pizzeria Romana Al Taglio, Baixa(não tem info icon)
+  if array.empty?
+    a = "15"
+  else
+    a = array[0].gsub(/\D/,'')
+  end
+
+  return a
 end
 
 def get_place_featured_image(agent)
@@ -34,7 +44,12 @@ def get_place_users_rating(agent)
 end
 
 def get_place_phone_number(agent)
-  return agent.search(".fontsize2.bold.zgreen").text.to_s.strip.delete(' ').to_i
+  if agent.search(".fontsize2.bold.zgreen").empty?
+    a = 0
+  else
+    a = agent.search(".fontsize2.bold.zgreen").first.text.to_s.strip.delete(' ').to_i
+  end
+  return a
 end
 
 def get_place_schedule(agent)
@@ -62,7 +77,7 @@ def get_type_of_meal(agent, schedule_array)
   end
 
   type_meal_array = []
-  more_info_array = more_info_array.select {|i| i == 'Beber um copo' || i == 'Brunch'}
+  more_info_array = more_info_array.select {|i| i == 'Nightlife' || i == 'Brunch'}
   schedule_array_integer = []
   schedule_array_integer[0] = schedule_array[0].gsub(/\D/,'').to_i
   schedule_array_integer[1] = schedule_array[1].gsub(/\D/,'').to_i
@@ -76,6 +91,17 @@ def get_type_of_meal(agent, schedule_array)
   end
 
   return more_info_array
+end
+
+def get_place_lat_lng(agent)
+ a = agent.search(".resmap.pos-relative.mt5.mb5")
+ array = []
+ array = a.search('script').text.to_s.lstrip.rstrip.split(',', 2)
+ lat_lng_array = []
+ array.each do |element|
+  lat_lng_array << element.match(/[+-]?([0-9]*[.])?[0-9]+/).to_s
+ end
+ return lat_lng_array
 end
 
 
@@ -93,11 +119,10 @@ agent.user_agent_alias = 'Mac Safari'
 
 limit = 80 # page limit in url
 for page_number in 1..limit
-  zom_url = URI "https://www.zomato.com/pt/grande-lisboa/comer-fora-em-lisboa?ref_page=zone&page=#{page_number}"
+  zom_url = URI "https://www.zomato.com/grande-lisboa/best-dine-out-in-lisboa?ref_page=zone&page=#{page_number}"
 
   # Search each link inside a card
   agent.get(zom_url).search(".result-title.hover_feedback").each do |link|
-    # puts link[:href]
     ######TODO 1: will click the link and scrape data inside that link
       agent_inside = Mechanize.new
       agent_inside.user_agent_alias = 'Mac Safari'
@@ -105,6 +130,7 @@ for page_number in 1..limit
       ## We enter the page for each link and save the data we want
       current_agent = agent_inside.get(inside_page_link)
       schedule = get_place_schedule(current_agent)
+      latitude_longitude_array = get_place_lat_lng(current_agent)
       place = {
         name: get_place_name(current_agent),
         address: get_place_address(current_agent),
@@ -115,13 +141,11 @@ for page_number in 1..limit
         phone_number: get_place_phone_number(current_agent),
         cuisines: get_cuisines(current_agent),
         schedule: schedule,
-        meal_types: get_type_of_meal(current_agent, schedule)
+        meal_types: get_type_of_meal(current_agent, schedule),
+        latitude: latitude_longitude_array[0],
+        longitude: latitude_longitude_array[1]
       }
       places << place
   end
   save(places)
 end
-
-
-
-
