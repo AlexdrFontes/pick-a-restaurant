@@ -5,6 +5,9 @@ class PlacesController < ApplicationController
 
     @places = Place.all
 
+    if params.values_at(:city, :radius).all?(&:present?)
+    @places = Place.near(params[:city], params[:radius])
+    end
 
      if params[:meal_type].present?
       sql_query = " \
@@ -15,9 +18,6 @@ class PlacesController < ApplicationController
 
 
 
-    if params.values_at(:city, :radius).all?(&:present?)
-    @places = Place.near(params[:city], params[:radius])
-    end
 
 
     if params[:cuisine_type].present?
