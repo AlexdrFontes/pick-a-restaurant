@@ -12,11 +12,19 @@
 
   </div>
 <%= social_share_button_tag('Share to Facebook', :url => "https://www.google.com/", desc: @places.sample.name) %>
+<%= image_tag "pick_share_btn.png", class: "img_btn"%>
+
 
 
 </div>
 </div>
 
 
-<a href="tel:<%= a.phone_number %>" >Call Us</a>
-<%= link_to "Directions", ('https://www.google.com/maps/dir/?api=1''&origin=''&destination='+ a.address) %>
+<a href="tel:<%= a.phone_number %>" ><%= image_tag "pick_call_btn.png", class: "img_btn" %></a>
+
+<%= link_to (image_tag "pick_location_btn.png", class: "img_btn"), ('https://www.google.com/maps/dir/?api=1''&origin=''&destination='+ a.address) %>
+
+
+
+
+<%= image_tag "pick_logo.png", {class: "logo"}%>
