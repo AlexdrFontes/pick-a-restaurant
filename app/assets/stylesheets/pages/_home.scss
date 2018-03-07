@@ -1,14 +1,16 @@
-// Specific CSS for your home-page
-
+.banner-container{
+  position: relative;
+}
 
 .banner-top{
 
   text-align: center;
   /* if you have a 70px navbar => height: calc(100vh - 70px); */
   display:flex;
+  flex-direction: column;
   background-size: cover !important;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
   background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(61,61,61,0.68) 50%), url('background.jpg');
   background-repeat: no-repeat;
   background-position: 60%;
@@ -16,8 +18,11 @@
   height:80vh;
   position: absolute;
   z-index: 10;
-  width:100%
-
+  width:100%;
+  p {
+     color: #EB5757;
+     justify-self: center;
+  }
 
 }
 
@@ -33,22 +38,43 @@
   background-repeat: no-repeat;
   background-position: 60%;
   padding-left: 0px;
-  height:100vh;
-  position: relative;
+  position: absolute;
+  width:100%;
 }
 
 .banner-bottom p{
   color: #EB5757;
 }
 
+.banner-content {
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.banner-form {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: -25px;
+  align-items: center;
+  color: $body-bg;
+  select {
+    width: 30vw;
+    text-indent: 10px;
+  }
+  button {
+    margin-top: 20px;
+  }
+}
+
 
 .btn-start{
   height: 90px;
-    width: 90px;
-    border-radius: 50%;
-    background-color: #EB5757;
-    border-color: #EB5757;
-    position: absolute;
+  width: 90px;
+  border-radius: 50%;
+  background-color: #EB5757;
+  border-color: #EB5757;
   bottom: -30px;
   box-shadow: 0px 12px 44px rgba(0, 0, 0, 0.67);
 
@@ -63,3 +89,11 @@ left:10px;
 font-size: 30px;
 
 }
+
+.banner-botton-text{
+  display: flex;
+  justify-content: center;
+  height:100%;
+}
+
+
