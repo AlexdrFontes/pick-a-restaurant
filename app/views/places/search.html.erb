@@ -1,13 +1,13 @@
 <h1>Places#search</h1>
 
 <!-- Cuisine Type -->
-  <form class="form" action="/places/show method="get">
+  <form class="form" action="/places/show" method="get">
     <input class="form-control mr-sm-2" type="text" name="cuisine_type" placeholder="Cuisine Type" action="/places/show method="get" style="width: 220px;">
 
 <!-- Location
      Radius
  -->
- <input class="form-control mr-sm-2" type="text" name="city" placeholder="City" action="/places/show method="get" style="width: 220px;">
+ <input class="form-control mr-sm-2" id="place_address"  type="text" name="place" placeholder="City" action="/places/show method="get" style="width: 220px;">
 
  <input class="form-control mr-sm-2" type="text" name="radius" placeholder="Radius" action="/places/show method="get" style="width: 220px;">
 
@@ -17,4 +17,3 @@
 
   <button class="btn-bike-me" type="submit" action="/places/show method="get">Apply Filters</button>
   </form>
-
