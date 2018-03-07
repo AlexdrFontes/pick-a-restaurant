@@ -1,4 +1,3 @@
-// Specific CSS for your home-page
 .banner-container{
   position: relative;
 }
@@ -29,22 +28,23 @@
 
 .banner-bottom{
   color: white;
+  text-align: center;
   height: 100vh;
   /* if you have a 70px navbar => height: calc(100vh - 70px); */
   background-size: cover !important;
+  align-items: center;
+  justify-content: center;
   background-image: url('table.jpg');
+  background-repeat: no-repeat;
   background-position: 60%;
-  width:100%;
-  p{
+  padding-left: 0px;
   position: absolute;
-font-size: 9px;
-letter-spacing: 0.04em;
-text-transform: uppercase;
-bottom:10px;
-  }
+  width:100%;
 }
 
-
+.banner-bottom p{
+  color: #EB5757;
+}
 
 .banner-content {
   height: 50%;
@@ -62,8 +62,6 @@ bottom:10px;
   select {
     width: 30vw;
     text-indent: 10px;
-    text-align-last:center;
-     display: inline-block;
   }
   button {
     margin-top: 20px;

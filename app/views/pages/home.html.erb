@@ -2,14 +2,29 @@
   <div class="banner-container">
     <div class="banner-top">
       <a href=""><i class="fas fa-bars menu"></i></a>
-
-
-
       <img class="logo" src="logo.jpg" alt="">
-
       <div class="banner-content">
+        <form class="form banner-form" action="/places/show" method="get">
+          <select name="meal_type" id="meal">
+            <option value="Brunch">Brunch</option>
+            <option value="Lunch">Lunch</option>
+            <option value="Dinner">Dinner</option>
+            <option value="Drinks">Drinks</option>
+          </select>
+          <button class="btn btn-primary btn-lg btn-start" id="a" type="submit" action="/places/show" method="get" ></button>
+        </form>
+      </div>
+    </div>
+    <div class="banner-bottom">
+      <div class="banner-botton-text">
+        <p>Long press for more settings</p>
+      </div>
+    </div>
+  </div>
+</div>
 
-      <!-- <div class="container">
+
+<!-- <div class="container">
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
           <div class="carousel-inner">
             <div class="item active">
@@ -40,28 +55,6 @@
           </a>
         </div>
       </div> -->
-
-
-
-
-        <form class="form banner-form" action="/places/show" method="get">
-          <select name="meal_type" id="meal">
-            <option value="Brunch">Brunch</option>
-            <option value="Lunch">Lunch</option>
-            <option value="Dinner">Dinner</option>
-            <option value="Drinks">Drinks</option>
-          </select>
-          <button class="btn btn-primary btn-lg btn-start" id="a" type="submit" action="/places/show" method="get" ></button>
-        </form>
-      </div>
-    </div>
-    <div class="banner-bottom">
-      <div class="banner-botton-text">
-        <p>Long press for more settings</p>
-      </div>
-    </div>
-  </div>
-</div>
 
 
 <!-- <script type="text/javascript">

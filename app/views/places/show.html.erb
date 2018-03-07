@@ -1,8 +1,22 @@
-<h1>Places#show</h1>
 
 <% a = @places.sample %>
-<%= a.name %>
-<% b = "Techtris House, Rua da Moeda 7, Lisbon, Portugal" %>
-<a href="tel:<%= a.phone_number %>" >Call Us</a>
+<div class="col-xs-12" style= "padding: 0px">
+  <div class= "show-all">
+<div class="banner-show-top" style="background-image: url(<%= image_path(a.featured_image) %>);">
+</div>
 
+<div class="show-down">
+
+  <h1><%=a.name %></h1>
+
+
+  </div>
+<%= social_share_button_tag('Share to Facebook', :url => "https://www.google.com/", desc: @places.sample.name) %>
+
+
+</div>
+</div>
+
+
+<a href="tel:<%= a.phone_number %>" >Call Us</a>
 <%= link_to "Directions", ('https://www.google.com/maps/dir/?api=1''&origin=''&destination='+ a.address) %>
