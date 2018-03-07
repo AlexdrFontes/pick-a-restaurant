@@ -2,8 +2,45 @@
   <div class="banner-container">
     <div class="banner-top">
       <a href=""><i class="fas fa-bars menu"></i></a>
+
+
+
+      <img class="logo" src="logo.jpg" alt="">
+
       <div class="banner-content">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+
+      <!-- <div class="container">
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner">
+            <div class="item active">
+            <div class="carousel-caption"><p>Brunch</p></div>
+            </div>
+
+            <div class="item">
+            <div class="carousel-caption"><p>Lunch</p></div>
+            </div>
+
+             <div class="item">
+               <div class="carousel-caption"><p>Dinner</p></div>
+            </div>
+             <div class="item">
+             <div class="carousel-caption"><p>Drinks</p></div>
+            </div>
+          </div>
+
+          <! Left and right controls -->
+
+       <!--    <a class="left carousel-control" href="#myCarousel" data-slide="prev" role="button">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="right carousel-control" href="#myCarousel" data-slide="next" role="button">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div> -->
+
 
 
 
@@ -14,13 +51,89 @@
             <option value="Dinner">Dinner</option>
             <option value="Drinks">Drinks</option>
           </select>
-          <button class="btn btn-primary btn-lg btn-start" type="submit" action="/places/show method="get"></button>
+          <button class="btn btn-primary btn-lg btn-start" id="a" type="submit" action="/places/show" method="get" ></button>
         </form>
       </div>
     </div>
     <div class="banner-bottom">
-      <div class="banner-bottom-content">
+      <div class="banner-botton-text">
+        <p>Long press for more settings</p>
       </div>
     </div>
   </div>
 </div>
+
+
+<!-- <script type="text/javascript">
+    // This is how you override the default duration for triggering longpress.
+    var longpress_config = {
+        duration: 300,
+    };
+  </script> -->
+
+  <!-- <script src="longpress.js"></script> -->
+
+
+  <script type="text/javascript">
+    // var a = document.getElementById('a');
+    // a.addEventListener('click', function(e) {
+    //     alert('Naah! This was just a normal click.');
+    // });
+    // a.addEventListener('longpress', function(e) {
+    //     alert('Yay! Got longpressed!');
+    // });
+
+
+
+
+    $("#a").mouseup(function(){
+      clearTimeout(pressTimer);
+      // Clear timeout
+      return false;
+    }).mousedown(function(){
+      // Set timeout
+      pressTimer = window.setTimeout(function() {
+        location.href = "/places/search";
+      },1000);
+
+      return false;
+    });
+
+
+
+
+    // var onlongtouch;
+    // var timer;
+    // var touchduration = 500; //length of time we want the user to touch before we do something
+
+    // touchstart() {
+    //     timer = setTimeout(onlongtouch, touchduration);
+    // }
+
+    // touchend() {
+
+    //     //stops short touches from firing the event
+    //     if (timer)
+    //         clearTimeout(timer); // clearTimeout, not cleartimeout..
+    // }
+
+    // onlongtouch = function() {
+
+    //   alert('hello jnoairjio');
+    // };
+
+
+
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
