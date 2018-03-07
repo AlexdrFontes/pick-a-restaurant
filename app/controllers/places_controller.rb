@@ -3,6 +3,7 @@ class PlacesController < ApplicationController
 
   def show
 
+
     @places = Place.all
 
     if params.values_at(:city, :radius).all?(&:present?)
