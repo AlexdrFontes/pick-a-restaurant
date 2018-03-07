@@ -2,15 +2,34 @@
 <% a = @places.sample %>
 <div class="col-xs-12" style= "padding: 0px">
   <div class= "show-all">
-<div class="banner-show-top" style="background-image: url(<%= image_path(a.featured_image) %>);">
-</div>
+    <%= image_tag "pick_logo.png", {class: "logo"}%>
+    <div class="banner-show-top" style="background-image: url(<%= image_path(a.featured_image) %>);">
+      <div class="show-buttons">
 
-<div class="show-down">
+        <div class="social-share-button" data-title="Share to Facebook" data-img="" data-url="https://www.google.com/" data-desc="Heim Cafe" data-via="">
+          <a rel="nofollow " data-site="facebook" class="ssb-icon ssb-facebook" onclick="return SocialShareButton.share(this);" title="Share to Facebook" href="#"></a>
+        </div>
+        <a href="tel:<%= a.phone_number %>" ><%= image_tag "pick_call_btn.png", class: "img_btn" %></a>
+        <%= link_to (image_tag "pick_location_btn.png", class: "img_btn"), ('https://www.google.com/maps/dir/?api=1''&origin=''&destination='+ a.address)
+      </div>
+    </div>
 
-  <h1><%=a.name %></h1>
-
-
+    <div class="show-down">
+      <div class="show-title">
+        <h1><%=a.name %></h1>
+        <div class="show-meal"><% a.meal_types.each do |meal| %>
+          <p><%=meal.name%></p>
+          <% end %>
+        </div>
+        <p><%=a.average_cost_for_two %>€</p>
+        <p>CHECK ME</p>
+      </div>
+      <div class="show-btn-again">
+    <%= link_to "Back", places_show_path%>
   </div>
+    </div>
+  </div>
+
 <%= social_share_button_tag('Share to Facebook', :url => "https://www.google.com/", desc: @places.sample.name) %>
 <%= image_tag "pick_share_btn.png", class: "img_btn"%>
 
@@ -20,11 +39,14 @@
 </div>
 
 
-<a href="tel:<%= a.phone_number %>" ><%= image_tag "pick_call_btn.png", class: "img_btn" %></a>
-
-<%= link_to (image_tag "pick_location_btn.png", class: "img_btn"), ('https://www.google.com/maps/dir/?api=1''&origin=''&destination='+ a.address) %>
 
 
 
 
-<%= image_tag "pick_logo.png", {class: "logo"}%>
+
+
+</div>
+
+
+
+
