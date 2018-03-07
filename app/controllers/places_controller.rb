@@ -8,6 +8,7 @@ class PlacesController < ApplicationController
 
     if params.values_at(:place, :radius).all?(&:present?)
     @places = Place.near(params[:place], params[:radius])
+
     end
 
     if params[:meal_type].present?
