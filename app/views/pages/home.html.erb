@@ -3,14 +3,14 @@
     <div class="banner-top">
 
       <a href=""><i class="fas fa-bars menu"></i></a>
-      <%= image_tag "pick_logo.png", {class: "logo"}%>
+      <%= image_tag "http://res.cloudinary.com/dywzzd0as/image/upload/v1520515481/logo.svg", {class: "logo"}%>
       <div class="banner-content">
         <form class="form banner-form" action="/places/show" method="get">
           <select name="meal_type" id="meal">
             <option value="Brunch">Brunch</option>
             <option value="Lunch">Lunch</option>
             <option value="Dinner">Dinner</option>
-            <option value="Drinks">Drinks</option>
+            <option value="Nightlife">Drinks</option>
           </select>
           <button class="btn btn-primary btn-lg btn-start" id="a" type="submit" action="/places/show" method="get" ></button>
         </form>

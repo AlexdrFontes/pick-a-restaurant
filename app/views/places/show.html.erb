@@ -4,10 +4,10 @@
   <div class= "show-all">
 
     <div class="banner-show-top" style="background-image: url(<%= a.featured_image%>);">
-      <%= image_tag "pick_logo.png", {class: "logo"}%>
+      <%= image_tag "http://res.cloudinary.com/dywzzd0as/image/upload/v1520515481/logo.svg", {class: "logo"}%>
       <div class="show-buttons">
-        <a href="tel:<%= a.phone_number %>" ><%= image_tag "pick_call_btn.png", class: "img_btn" %></a>
-        <%= link_to (image_tag "pick_location_btn.png", class: "img_btn"), ('https://www.google.com/maps/dir/?api=1''&origin=''&destination='+ a.address)%>
+        <a href="tel:<%= a.phone_number %>" ><%= image_tag "http://res.cloudinary.com/dywzzd0as/image/upload/v1520514037/Group_2.svg", class: "img_btn" %></a>
+        <%= link_to (image_tag "http://res.cloudinary.com/dywzzd0as/image/upload/v1520513208/location.svg", class: "img_btn"), ('https://www.google.com/maps/dir/?api=1''&origin=''&destination='+ a.address)%>
 
 
         <!-- <div class="social-share-button" data-title="Share to Facebook" data-img="" data-url="https://www.google.com/" data-desc="Heim Cafe" data-via="">
@@ -15,7 +15,7 @@
         </div> -->
 
 
-        <%= link_to image_tag("pick_share_btn.png", class: "img_btn"), 'http://www.facebook.com/sharer.php?u='+request.fullpath, :target => :blank %>
+        <%= link_to image_tag("http://res.cloudinary.com/dywzzd0as/image/upload/v1520513627/share.svg", class: "img_btn"), 'http://www.facebook.com/sharer.php?u='+request.fullpath, :target => :blank %>
 
       </div>
     </div>
@@ -49,7 +49,7 @@
         <div class="show-menu-price">
           <div class="show-price">
             <p class="price"><%=a.average_cost_for_two %>€ </p>
-            <%= image_tag "people.png", {class: "people"}%>
+            <%= image_tag "http://res.cloudinary.com/dywzzd0as/image/upload/v1520520005/people.svg", {class: "people"}%>
           </div>
           <div class="show-menu">
             <p class="menu-text">CHECK ME</p>
@@ -60,14 +60,13 @@
 
     </div>
     <div class="show-btn-again">
-        <%= link_to "Back", places_show_path%>
+        <%= link_to image_tag("http://res.cloudinary.com/dywzzd0as/image/upload/v1520514430/again_button.png", class: "show-btn-again"), places_show_path%>
       </div>
   </div>
 </div>
 
 </div>
 </div>
-
 
 
 
