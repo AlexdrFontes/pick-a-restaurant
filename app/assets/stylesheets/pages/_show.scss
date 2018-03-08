@@ -91,7 +91,13 @@
   margin-bottom:20px;
 }
 
-.people{
+.people-icon{
+  height: 25px;
+  margin-left: 3px;
+
+}
+
+.menu-icon{
   height: 25px;
   margin-left: 3px;
 }
@@ -100,6 +106,8 @@
   display:flex;
   justify-content: center;
   height: auto;
+margin-right: 15px;
+
   p{
     margin:0px;
   }
@@ -107,9 +115,31 @@
 
 .show-menu-price{
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+
+
 }
 
 .show-menu{
+display:flex;
+  justify-content: center;
+  height: auto;
+  margin-left: 15px;
+}
 
+
+.show-time{
+  display:flex;
+  justify-content: center;
+  height: auto;
+  margin-rigth: 15px;
+  p{
+    margin:0px;
+  }
+}
+
+
+.clock-icon{
+height: 25px;
+  margin-right: 3px
 }

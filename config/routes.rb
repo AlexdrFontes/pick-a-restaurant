@@ -5,6 +5,10 @@ Rails.application.routes.draw do
 
   get 'places/results', to: 'places#results'
 
+  get 'places/:id', to: 'places#show_id', as: 'places_show_id'
+
+
+
   devise_for :users
   root to: 'pages#home'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
