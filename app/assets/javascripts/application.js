@@ -1,4 +1,10 @@
 //= require rails-ujs
 //= require_tree .
-= require social-share-button
+//= require jquery
+//= require selectize
 
+//= require social-share-button
+
+$(function() {
+  $("#selectize").selectize();
+});

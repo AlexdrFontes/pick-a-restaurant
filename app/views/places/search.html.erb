@@ -1,9 +1,10 @@
 <h1>Places#search</h1>
 
+
 <!-- Cuisine Type -->
   <form class="form" action="/places/show" method="get">
-    <input class="form-control mr-sm-2" type="text" name="cuisine_type" placeholder="Cuisine Type" action="/places/show method="get" style="width: 220px;">
 
+    <input class="form-control mr-sm-2" type="text" name="cuisine_type" placeholder="Cuisine Type" action="/places/show method="get" style="width: 220px;">
 
     <input class="form-control mr-sm-2" id="place_address"  type="text" name="place" placeholder="City" action="/places/show method="get" style="width: 220px;">
 
@@ -27,3 +28,9 @@
   <button class="btn-bike-me" type="submit" action="/places/show method="get">Apply Filters</button>
   </form>
 
+
+<%= form_for(places_show_path) do |f| %>
+  <div class="form-group">
+    <%= f.select( :cuisine_types, @unique_types, {}, {multiple: true, id: "selectize"}) %>
+  </div>
+<% end %>
