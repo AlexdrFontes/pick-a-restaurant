@@ -1,11 +1,13 @@
 <h1>Places#search</h1>
 
-<!-- Cuisine Type -->
-  <form class="form" action="/places/show" method="get">
-    <input class="form-control mr-sm-2" type="text" name="cuisine_type" placeholder="Cuisine Type" action="/places/show method="get" style="width: 220px;">
 
 
-    <input class="form-control mr-sm-2" id="place_address"  type="text" name="place" placeholder="City" action="/places/show method="get" style="width: 220px;">
+<%= form_for("search", :url => { :action => "show" }, :html => { :method => "GET"}) do |f| %>
+  <div class="form-group">
+    <%= f.select( :cuisine_types, @unique_types, {}, {multiple: true, id: "selectize"}) %>
+  </div>
+  <input class="form-control mr-sm-2" id="place_address"  type="text" name="place" placeholder="City" action="/places/show method="get" style="width: 220px;">
+
 
 <!-- Location
      Radius
@@ -20,11 +22,11 @@
       var output = document.getElementById("demo");
       output.innerHTML = slider.value;
 
-      slider.oninput = function() {
-        output.innerHTML = this.value;
-      }
-    </script>
+    slider.oninput = function() {
+      output.innerHTML = this.value;
+    }
+  </script>
 
-  <button class="btn-bike-me" type="submit" action="/places/show method="get">Apply Filters</button>
-  </form>
+  <button class="btn-bike-me" type="submit" method="get">Apply Filters</button>
 
+<% end %>
