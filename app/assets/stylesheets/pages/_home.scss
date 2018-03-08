@@ -22,7 +22,7 @@
   width:100%;
   .row {
     position:relative;
-    bottom: -200px;
+    bottom: -215px;
     width:60%;
   }
   p {
@@ -107,6 +107,21 @@ top:10px;
 left:10px;
 font-size: 30px;
 
+}
+
+.logo-home {
+  width: 120px;
+  position: absolute;
+  top:210px;
+}
+
+.slogan {
+  position:absolute;
+  top:300px;
+  p {
+    font-size: 25px;
+
+  }
 }
 
 .banner-botton-text{
