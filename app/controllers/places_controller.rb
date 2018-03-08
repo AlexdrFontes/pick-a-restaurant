@@ -1,10 +1,17 @@
 class PlacesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:search, :show]
 
+  def search
+    @places = Place.all
+    @cuisine_types = CuisineType.all
+    @unique_types = @cuisine_types.select(:name).uniq.map(&:name)
+  end
+
   def show
 
-
     @places = Place.all
+    @cuisine_types = CuisineType.all
+    @unique_types = @cuisine_types.select(:name).uniq.map(&:name)
 
     if params.values_at(:place, :radius).all?(&:present?)
     @places = Place.near(params[:place], params[:radius])
@@ -19,15 +26,21 @@ class PlacesController < ApplicationController
     end
 
 
-    if params[:cuisine_type].present?
+    if params[:search][:cuisine_types][1].present?
+
       sql_query = " \
         cuisine_types.name @@ :cuisine_type \
        "
-      @places = @places.joins(:cuisine_types).where(sql_query, cuisine_type: "%#{params[:cuisine_type]}%")
+      params[:search][:cuisine_types][1..-1].each do |type|
+        type = CuisineType.find_by(name: type)
+        @places._select! do |place|
+          place.cuisine_types.include? type
+        end
+        raise
+      end
+      # @places = @places.joins(:cuisine_types).where(sql_query, cuisine_type: "%#{params[:search][:cuisine_types]}%")
     end
-
     @place = @places.sample
-
 
       # @places = @places.where(address: params[:address])
   end

@@ -1,3 +1,8 @@
+/* ...
+*= require selectize
+*= require selectize.default
+*/
+
 // Graphical variables
 @import "config/fonts";
 @import "config/colors";
@@ -9,14 +14,19 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
+@import "selectize";
+@import "selectize.bootstrap3";
+
 // Your CSS partials
 @import "layouts/index";
 @import "components/index";
 @import "pages/index";
 
-
-
 @import "social-share-button";
+
+
+
+
 
 
 .social-share-button {

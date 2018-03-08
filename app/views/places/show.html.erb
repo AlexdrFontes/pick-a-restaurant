@@ -3,6 +3,7 @@
 <div class="col-xs-12" style= "padding: 0px">
   <div class= "show-all">
 
+
     <div class="banner-show-top" style="background-image: url(<%= a.featured_image%>);">
       <%= image_tag "http://res.cloudinary.com/dywzzd0as/image/upload/v1520515481/logo.svg", {class: "logo"}%>
       <div class="show-buttons">
@@ -37,6 +38,7 @@
           <% a.cuisine_types.each do |cuisine|  %>
           <% char = char + cuisine.name.size %>
           <% end %>
+
 
 
 
