@@ -7,6 +7,8 @@ User.destroy_all
 Place.destroy_all
 CuisineType.destroy_all
 MealType.destroy_all
+PlaceCuisineType.destroy_all
+PlaceMealType.destroy_all
 
 def associate_cuisine(place, cuisine_types)
   cuisine_types.each do |cuisine|
