@@ -83,3 +83,5 @@ production:
   database: pick-a-restaurant_production
   username: pick-a-restaurant
   password: <%= ENV['PICK-A-RESTAURANT_DATABASE_PASSWORD'] %>
+
+  host: localhost

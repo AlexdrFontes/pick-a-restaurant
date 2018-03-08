@@ -4,10 +4,11 @@
   <div class= "show-all">
 
     <div class="banner-show-top" style="background-image: url(<%= a.featured_image%>);">
-      <%= image_tag "pick_logo.png", {class: "logo"}%>
+      <%= image_tag "http://res.cloudinary.com/dywzzd0as/image/upload/v1520515481/logo.svg", {class: "logo"}%>
       <div class="show-buttons">
-        <a href="tel:<%= a.phone_number %>" ><%= image_tag "pick_call_btn.png", class: "img_btn" %></a>
-        <%= link_to (image_tag "pick_location_btn.png", class: "img_btn"), ('https://www.google.com/maps/dir/?api=1''&origin=''&destination='+ a.address)%>
+
+        <a href="tel:<%= a.phone_number %>" ><%= image_tag "http://res.cloudinary.com/dywzzd0as/image/upload/v1520514037/Group_2.svg", class: "img_btn" %></a>
+        <%= link_to (image_tag "http://res.cloudinary.com/dywzzd0as/image/upload/v1520513208/location.svg", class: "img_btn"), ('https://www.google.com/maps/dir/?api=1''&origin=''&destination='+ a.address)%>
 
 
 
@@ -15,9 +16,7 @@
           <a rel="nofollow " data-site="facebook" onclick="return SocialShareButton.share(this);" title="Share to Facebook" href="#"><%= image_tag "pick_share_btn.png", class: "img_btn"%></a>
         </div> -->
 
-
-        <%= link_to image_tag("pick_share_btn.png", class: "img_btn"), "http://www.facebook.com/sharer.php?u=http%3A%2F%2Fpick-restaurant.herokuapp.com/places/#{a.id}", :target => :blank %>
-
+        <%= link_to image_tag("http://res.cloudinary.com/dywzzd0as/image/upload/v1520513627/share.svg", class: "img_btn"), "http://www.facebook.com/sharer.php?u=http%3A%2F%2Fpick-restaurant.herokuapp.com/places/#{a.id}", :target => :blank %>
 
       </div>
     </div>
@@ -51,7 +50,8 @@
         <div class="show-menu-price">
           <div class="show-price">
             <p class="price"><%=a.average_cost_for_two %>€ </p>
-            <%= image_tag "people.png", {class: "people-icon"}%>
+
+            <%= image_tag "http://res.cloudinary.com/dywzzd0as/image/upload/v1520520005/people.svg", {class: "people"}%>
           </div>
           <div class="show-menu">
 
@@ -64,25 +64,20 @@
           <div class="show-time">
             <%= image_tag "clock.svg", {class: "clock-icon"}%>
             <p class="hours"><%=a.opening_time%> - <%=a.closing_time%></p>
-
           </div>
         </div>
 
-
       </div>
-
     </div>
+
     <div class="show-btn-again">
-
-        <button onclick=location=URL></button>
-
+        <button onclick=location=URL><%= image_tag("http://res.cloudinary.com/dywzzd0as/image/upload/v1520514430/again_button.png", class: "show-btn-again")%></button>
     </div>
+      </div>
   </div>
 </div>
-
 </div>
 </div>
-
 
 
 
