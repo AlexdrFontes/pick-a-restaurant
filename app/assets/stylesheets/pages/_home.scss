@@ -1,5 +1,6 @@
 .banner-container{
   position: relative;
+
 }
 
 .banner-top{
@@ -11,7 +12,7 @@
   background-size: cover !important;
   align-items: center;
   justify-content: flex-end;
-  background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(61,61,61,0.68) 50%), url('background.jpg');
+  background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(61,61,61,0.68) 50%), url("http://res.cloudinary.com/dywzzd0as/image/upload/v1520512577/background.jpg");
   background-repeat: no-repeat;
   background-position: 60%;
   padding-left: 0px;
@@ -19,6 +20,11 @@
   position: absolute;
   z-index: 10;
   width:100%;
+  .row {
+    position:relative;
+    bottom: -215px;
+    width:60%;
+  }
   p {
      color: #EB5757;
      justify-self: center;
@@ -34,23 +40,29 @@
   background-size: cover !important;
   align-items: center;
   justify-content: center;
-  background-image: url('table.jpg');
+
+  background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(61,61,61,0.35) 50%), url("http://res.cloudinary.com/dywzzd0as/image/upload/v1520512811/table.jpg");
+
   background-repeat: no-repeat;
   background-position: 60%;
   padding-left: 0px;
-  position: absolute;
+  position: relative;
   width:100%;
-}
-
-.banner-bottom p{
-  color: #EB5757;
+    p{
+  position: absolute;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  bottom:30px;
+  color:white;
+  }
 }
 
 .banner-content {
   height: 50%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-end;
 }
 
 .banner-form {
@@ -62,6 +74,7 @@
   select {
     width: 30vw;
     text-indent: 10px;
+     text-align-last:center;
   }
   button {
     margin-top: 20px;
@@ -76,8 +89,14 @@
   background-color: #EB5757;
   border-color: #EB5757;
   bottom: -30px;
-  box-shadow: 0px 12px 44px rgba(0, 0, 0, 0.67);
+  box-shadow: 0px 12px 44px rgba(0, 0, 0, 0.8);
+  position:relative;
+  bottom: -25px;
 
+}
+
+.button_pick {
+  width: 40px;
 }
 
 
@@ -90,10 +109,53 @@ font-size: 30px;
 
 }
 
+.logo-home {
+  width: 120px;
+  position: absolute;
+  top:210px;
+}
+
+.slogan {
+  position:absolute;
+  top:300px;
+  p {
+    font-size: 25px;
+
+  }
+}
+
 .banner-botton-text{
   display: flex;
   justify-content: center;
-  height:100%;
+
 }
+
+.container {
+  width: 100%;
+}
+
+.meals_home {
+  width: 100px;
+}
+
+.carousel-caption {
+  padding-bottom: -5px !important;
+  position: static;
+  p {
+    color: white;
+    font-size: 30px;
+    margin: 0px;
+  }
+}
+
+.carousel-control {
+  background-image: none !important;
+  color: #EB5757;
+  :hover {
+    color: #EB5757;
+  }
+}
+
+
 
 

@@ -44,7 +44,6 @@ data.each do |element|
         opening_time: schedule[0],
         closing_time: schedule[1],
         phone_number: element['phone_number'])
-
     associate_cuisine(a, element['cuisines'])
     associate_meal(a, element['meal_types'])
 end

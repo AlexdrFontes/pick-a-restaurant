@@ -15,6 +15,7 @@ class PlacesController < ApplicationController
 
     if params.values_at(:place, :radius).all?(&:present?)
     @places = Place.near(params[:place], params[:radius])
+
     end
 
     if params[:meal_type].present?
@@ -39,6 +40,17 @@ class PlacesController < ApplicationController
       end
       # @places = @places.joins(:cuisine_types).where(sql_query, cuisine_type: "%#{params[:search][:cuisine_types]}%")
     end
+    @place = @places.sample
+
       # @places = @places.where(address: params[:address])
   end
+
+
+def show_id
+
+@place = Place.find(params[:id])
+render "show"
+
+end
+
 end

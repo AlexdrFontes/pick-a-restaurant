@@ -6,6 +6,5 @@ class Place < ApplicationRecord
   has_many :meal_types, through: :place_meal_types
   has_many :photos
   has_many :users, through: :places_histories
-  geocoded_by :city
-  after_validation :geocode, if: :will_save_change_to_address?
+  geocoded_by :address
 end

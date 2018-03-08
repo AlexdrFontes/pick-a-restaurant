@@ -8,14 +8,19 @@
   </div>
   <input class="form-control mr-sm-2" id="place_address"  type="text" name="place" placeholder="City" action="/places/show method="get" style="width: 220px;">
 
-  <div class="slidecontainer">
-    <input class="form-control" type="range" min="7" max="300" step="0.1" value="10" name="radius" id="myRange" action="/places/show" method="get">
-      <p>Value: <span id="demo"></span></p>
-  </div>
-  <script>
-    var slider = document.getElementById("myRange");
-    var output = document.getElementById("demo");
-    output.innerHTML = slider.value;
+
+<!-- Location
+     Radius
+ -->
+ <!-- <input class="form-control mr-sm-2" type="text" name="radius" placeholder="Radius" action="/places/show method="get" style="width: 220px;"> -->
+    <div class="slidecontainer">
+      <input class="form-control" type="range" min="0.5" max="30" step="0.1" value="0.5" name="radius" id="myRange" action="/places/show" method="get">
+        <p>Value: <span id="demo"></span></p>
+    </div>
+    <script>
+      var slider = document.getElementById("myRange");
+      var output = document.getElementById("demo");
+      output.innerHTML = slider.value;
 
     slider.oninput = function() {
       output.innerHTML = this.value;

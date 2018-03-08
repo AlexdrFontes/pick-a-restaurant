@@ -1,8 +1,7 @@
 import "bootstrap";
-import { autocomplete } from 'autocomplete';
-autocomplete();
-import "range_slider";
-
+// import { autocomplete } from 'autocomplete';
+// autocomplete();
+// import "range_slider";
 
 //= require simple_form_extension
 
