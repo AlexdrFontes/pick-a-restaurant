@@ -3,6 +3,12 @@
   height:100vh;
 }
 
+.show-btn-again{
+  position:absolute;
+  bottom:10px;
+  right:10px;
+}
+
 .banner-show-top {
   height:50vh;
   background-size: cover !important;
@@ -30,17 +36,42 @@
 }
 
 .show-title{
+  padding-left: 5px;
+  padding-right: 5px;
+   font-weight: bold;
   h1{
     font-size: 35px;
     padding-top: 40px;
     padding-bottom: 30px;
-    font-weight: bold;
+
+  }
+   h2{
+    font-size: 28px;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    margin-top:12.5px;
+
+  }
+  h3{
+       font-size: 22px;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    margin-top:12.5px;
   }
 }
 
 .show-meal{
   display: flex;
-  justify-content: space-around;
+
+  border: 1px solid #EB5757;
+  color:#EB5757;
+  padding:3px;
+  margin-bottom:15px;
+  margin:5px;
+  p{
+    margin-bottom:0px;
+    font-size:15px;
+  }
 }
 
 .logo {
@@ -52,4 +83,33 @@
 
 .img_btn {
   width: 70px;
+}
+
+.show-meal-all{
+  display:flex;
+  justify-content: center;
+  margin-bottom:20px;
+}
+
+.people{
+  height: 25px;
+  margin-left: 3px;
+}
+
+.show-price{
+  display:flex;
+  justify-content: center;
+  height: auto;
+  p{
+    margin:0px;
+  }
+}
+
+.show-menu-price{
+  display: flex;
+  justify-content: space-around;
+}
+
+.show-menu{
+
 }
