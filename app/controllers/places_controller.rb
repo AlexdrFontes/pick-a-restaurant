@@ -28,6 +28,16 @@ class PlacesController < ApplicationController
 
     @place = @places.sample
 
+
       # @places = @places.where(address: params[:address])
   end
+
+
+def show_id
+
+@place = Place.find(params[:id])
+render "show"
+
+end
+
 end
