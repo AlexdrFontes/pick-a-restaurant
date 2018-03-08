@@ -3,7 +3,7 @@
 <div class="col-xs-12" style= "padding: 0px">
   <div class= "show-all">
 
-    <div class="banner-show-top" style="background-image: url(<%= image_path(a.featured_image) %>);">
+    <div class="banner-show-top" style="background-image: url(<%= a.featured_image%>);">
       <%= image_tag "pick_logo.png", {class: "logo"}%>
       <div class="show-buttons">
         <a href="tel:<%= a.phone_number %>" ><%= image_tag "pick_call_btn.png", class: "img_btn" %></a>
@@ -17,27 +17,56 @@
 
 
 
-  <%= link_to image_tag("pick_share_btn.png", class: "img_btn"), 'http://www.facebook.com/sharer.php?u='+request.fullpath, :target => :blank %>
+        <%= link_to image_tag("pick_share_btn.png", class: "img_btn"), 'http://www.facebook.com/sharer.php?u='+request.fullpath, :target => :blank %>
 
       </div>
     </div>
 
     <div class="show-down">
       <div class="show-title">
+
+        <% if a.name.size > 45 %>
+        <h3><%=a.name %></h3>
+        <% elsif a.name.size > 22 %>
+        <h2><%=a.name %></h2>
+        <% else %>
         <h1><%=a.name %></h1>
-        <div class="show-meal"><% a.meal_types.each do |meal| %>
-          <p><%=meal.name%></p>
+        <% end %>
+
+        <div class="show-meal-all" >
+          <% char = 0  %>
+          <% a.cuisine_types.each do |cuisine|  %>
+          <% char = char + cuisine.name.size %>
+          <% end %>
+
+
+
+          <% a.cuisine_types.each do |cuisine| %>
+          <div class="show-meal">
+            <p><%=cuisine.name%></p>
+          </div>
           <% end %>
         </div>
-        <p><%=a.average_cost_for_two %>€</p>
-        <p>CHECK ME</p>
+
+        <div class="show-menu-price">
+          <div class="show-price">
+            <p class="price"><%=a.average_cost_for_two %>€ </p>
+            <%= image_tag "people.png", {class: "people"}%>
+          </div>
+          <div class="show-menu">
+            <p class="menu-text">CHECK ME</p>
+          </div>
+        </div>
+
       </div>
-      <div class="show-btn-again">
-    <%= link_to "Back", places_show_path%>
-  </div>
+
     </div>
+    <div class="show-btn-again">
+        <%= link_to "Back", places_show_path%>
+      </div>
   </div>
 </div>
+
 </div>
 </div>
 
