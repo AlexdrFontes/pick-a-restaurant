@@ -6,7 +6,9 @@
 </div>
 
 <div class="show-down">
-
+  <% a.cuisine_types.each do |t| %>
+  <%= t.name %>
+  <% end %>
   <h1><%=a.name %></h1>
 
 
