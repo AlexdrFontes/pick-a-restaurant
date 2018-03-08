@@ -2,23 +2,78 @@
   <div class="banner-container">
     <div class="banner-top">
 
+      <div class="row maels">
+        <div class="col-xs-12">
+          <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-interval="false">
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" role="listbox">
+
+              <div class="item active" data-name="Brunch">
+                <div class="carousel-caption">
+                  <p>brunch</p>
+                </div>
+              </div>
+
+              <div class="item" data-name="Lunch">
+                <div class="carousel-caption">
+                  <p>lunch</p>
+                </div>
+              </div>
+
+              <div class="item" data-name="Dinner">
+                <div class="carousel-caption">
+                  <p>dinner</p>
+                </div>
+              </div>
+
+              <div class="item" data-name="Nightlife">
+                <div class="carousel-caption">
+                  <p>drinks</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <!-- Controls -->
+          <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div>
+
+
+
+
+
       <a href=""><i class="fas fa-bars menu"></i></a>
       <%= image_tag "http://res.cloudinary.com/dywzzd0as/image/upload/v1520515481/logo.svg", {class: "logo"}%>
       <div class="banner-content">
-        <form class="form banner-form" action="/places/show" method="get">
-          <select name="meal_type" id="meal">
+        <!-- <form class="form banner-form" action="/places/show" method="get"> -->
+          <!-- <select name="meal_type" id="meal">
             <option value="Brunch">Brunch</option>
             <option value="Lunch">Lunch</option>
             <option value="Dinner">Dinner</option>
-            <option value="Nightlife">Drinks</option>
-          </select>
-          <button class="btn btn-lg btn-start" id="a" type="submit" action="/places/show" method="get" ><%= image_tag "Ellipse (1).png", {class: "button_pick"} %></button>
-        </form>
+
+            <option value="Drinks">Drinks</option>
+          </select> -->
+          <button class="btn btn-lg btn-start" id="a" type="button" action="/places/show" method="get" onclick="goToPlace()">
+            <%= image_tag "Ellipse (1).png", {class: "button_pick"} %>
+          </button>
+          <!-- </form> -->
+        </div>
+
       </div>
-    </div>
-    <div class="banner-bottom">
-      <div class="banner-botton-text">
-        <p>Long press for more settings</p>
+      <div class="banner-bottom">
+        <div class="banner-botton-text">
+          <p>Long press for more settings</p>
+        </div>
       </div>
     </div>
   </div>
@@ -46,6 +101,36 @@
 
       return false;
     });
+
+
+    function goToPlace() {
+
+      location.href = "/places/show?meal_type=" + $('.carousel .active').data('name');
+    }
+
+
+
+
+    // var onlongtouch;
+    // var timer;
+    // var touchduration = 500; //length of time we want the user to touch before we do something
+
+    // touchstart() {
+    //     timer = setTimeout(onlongtouch, touchduration);
+    // }
+
+    // touchend() {
+
+    //     //stops short touches from firing the event
+    //     if (timer)
+    //         clearTimeout(timer); // clearTimeout, not cleartimeout..
+    // }
+
+    // onlongtouch = function() {
+
+    //   alert('hello jnoairjio');
+    // };
+
 
   </script>
 
