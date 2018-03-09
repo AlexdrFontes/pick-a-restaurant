@@ -37,8 +37,20 @@ class PlacesController < ApplicationController
 
     end
 
+    if params[:min_price].present?
+       # @places = @places.joins(:places).where(sql_query, min_price: "%#{params[:min_price]}%")
+       min = params[:min_price].to_i
+       @places = @places.where("average_cost_for_two >= ?",min)
+    end
+
+    if params[:max_price].present?
+       # @places = @places.joins(:places).where(sql_query, min_price: "%#{params[:min_price]}%")
+       max = params[:max_price].to_i
+       @places = @places.where("average_cost_for_two <= ?",max)
+    end
 
     @place = @places.sample
+
 
 
 

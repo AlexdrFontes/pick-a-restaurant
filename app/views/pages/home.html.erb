@@ -1,8 +1,10 @@
 <div class="col-xs-12" style= "padding: 0px">
   <div class="banner-container">
     <div class="banner-top">
+    <div class="banner-top-image"></div>
+
       <div class="text-home">
-        <div class = title>
+        <div class = "title">
           <%= image_tag "http://res.cloudinary.com/dywzzd0as/image/upload/v1520515481/logo.svg", {class: "logo-home"}%>
         </div>
         <div class="slogan">
@@ -54,10 +56,9 @@
           </a>
         </div>
         <button class="btn btn-lg btn-start" id="a" type="button" action="/places/show" method="get" onclick="goToPlace()">
-          <%= image_tag "Ellipse (1).png", {class: "button_pick"} %>
+          <%= image_tag "http://res.cloudinary.com/dywzzd0as/image/upload/v1520523777/Ellipse.svg", {class: "button_pick"} %>
         </button>
       </div>
-
         </div>
 
 
@@ -77,19 +78,32 @@
       return false;
     }).mousedown(function(){
       // Set timeout
+      this.preventDefault();
       pressTimer = window.setTimeout(function() {
         location.href = "/places/search?meal_type=" + $('.carousel .active').data('name');
       },1000);
       return false;
     });
 
-
-    $("#a").tap(function() {
-      location.href = "/places/show?meal_type=" + $('.carousel .active').data('name');
-
-    }).hold(function() {
-      location.href = "/places/search?meal_type=" + $('.carousel .active').data('name');
+    $("#a").taphold(function(){
+        // Set timeout
+        pressTimer = window.setTimeout(function() {
+          location.href = "/places/search?meal_type=" + $('.carousel .active').data('name');
+        },1000);
+        return false;
     });
+
+
+
+
+        $(function(){
+  $( "btn btn-lg btn-start" ).bind( "taphold", tapholdHandler );
+
+  function tapholdHandler( event ){
+    $( event.target ).addClass( "taphold" );
+  }
+});
+
 
     // var onlongtouch;
     // var timer;
@@ -118,13 +132,6 @@
     };
 
   </script>
-
-  <script type="text/javascript">
-
-
-
-  </script>
-
 
 
 
