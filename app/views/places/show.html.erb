@@ -2,29 +2,20 @@
 <% a = @place %>
 <div class="col-xs-12" style= "padding: 0px">
   <div class= "show-all">
-
-
     <div class="banner-show-top" style="background-image: url(<%= a.featured_image%>);">
       <%= image_tag "http://res.cloudinary.com/dywzzd0as/image/upload/v1520515481/logo.svg", {class: "logo"}%>
       <div class="show-buttons">
-
         <a href="tel:<%= a.phone_number %>" ><%= image_tag "http://res.cloudinary.com/dywzzd0as/image/upload/v1520514037/Group_2.svg", class: "img_btn" %></a>
         <%= link_to (image_tag "http://res.cloudinary.com/dywzzd0as/image/upload/v1520513208/location.svg", class: "img_btn"), ('https://www.google.com/maps/dir/?api=1''&origin=''&destination='+ a.address)%>
-
-
-
         <!-- <div class="social-share-button" data-title="Share to Facebook" data-img="" data-url="https://www.google.com/" data-desc="Heim Cafe" data-via="">
           <a rel="nofollow " data-site="facebook" onclick="return SocialShareButton.share(this);" title="Share to Facebook" href="#"><%= image_tag "pick_share_btn.png", class: "img_btn"%></a>
         </div> -->
-
         <%= link_to image_tag("http://res.cloudinary.com/dywzzd0as/image/upload/v1520513627/share.svg", class: "img_btn"), "http://www.facebook.com/sharer.php?u=http%3A%2F%2Fpick-restaurant.herokuapp.com/places/#{a.id}", :target => :blank %>
-
       </div>
     </div>
 
     <div class="show-down">
       <div class="show-title">
-
         <% if a.name.size > 45 %>
         <h3><%=a.name %></h3>
         <% elsif a.name.size > 22 %>
@@ -32,59 +23,68 @@
         <% else %>
         <h1><%=a.name %></h1>
         <% end %>
-
-        <div class="show-meal-all" >
-          <% char = 0  %>
-          <% a.cuisine_types.each do |cuisine|  %>
-          <% char = char + cuisine.name.size %>
-          <% end %>
-
-
-
-
+      </div>
+      <div class="show-meal-all" >
+        <% char = 0  %>
+        <% cuisines = []  %>
+        <% split = []  %>
+        <% a.cuisine_types.each do |cuisine|  %>
+        <% char = char + cuisine.name.size %>
+        <% cuisines << cuisine.name  %>
+        <% end %>
+        <% if char > 35  %>
+        <div class="show-meal-both">
+          <div class="show-meal-block">
+            <% cuisines[0..2].each do |cuisine| %>
+            <div class="show-meal">
+              <p><%= cuisine %></p>
+            </div>
+            <% end %>
+          </div>
+          <div class="show-meal-block second">
+            <% cuisines[3..-1].each do |cuisine| %>
+            <div class="show-meal">
+              <p><%= cuisine %></p>
+            </div>
+            <% end %>
+          </div>
+        </div>
+        <% else %>
+        <div class="show-meal-block second">
           <% a.cuisine_types.each do |cuisine| %>
           <div class="show-meal">
             <p><%=cuisine.name%></p>
           </div>
           <% end %>
         </div>
-
+        <% end %>
         <div class="show-menu-price">
           <div class="show-price">
             <p class="price"><%=a.average_cost_for_two %>€ </p>
-
-            <%= image_tag "http://res.cloudinary.com/dywzzd0as/image/upload/v1520520005/people.svg", {class: "people"}%>
+            <%= image_tag "http://res.cloudinary.com/dywzzd0as/image/upload/v1520520005/people.svg", {class: "people-icon"}%>
           </div>
           <div class="show-menu">
-
             <%= link_to image_tag("menu.svg", class: "menu-icon"), a.featured_image, :target => :blank %>
             <p class="menu-text">CHECK ME</p>
           </div>
         </div>
-
-        <div class="show-menu-price">
+        <div class="show-pay-time">
           <div class="show-time">
             <%= image_tag "clock.svg", {class: "clock-icon"}%>
             <p class="hours"><%=a.opening_time%> - <%=a.closing_time%></p>
           </div>
         </div>
-
       </div>
     </div>
-
-
-        <%= image_tag("http://res.cloudinary.com/dywzzd0as/image/upload/v1520514430/again_button.png", class: "show-btn-again")%>
+      <%= image_tag("http://res.cloudinary.com/dywzzd0as/image/upload/v1520514430/again_button.png", class: "show-btn-again")%>
       <script>
         $('.show-btn-again').on('click', function() {
           location.reload()
         })
       </script>
-
-      </div>
+   </div>
   </div>
+ </div>
 </div>
-</div>
-</div>
-
 
 
