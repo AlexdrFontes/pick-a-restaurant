@@ -99,7 +99,9 @@
   bottom: -180px;
   margin-left: -45px;
 
-
+  img {
+    -webkit-touch-callout: none !important;
+  }
 }
 
 .button_pick {
@@ -169,11 +171,4 @@ font-size: 30px;
     color: #EB5757;
   }
 }
-
-
-
-
-
-
-
 
