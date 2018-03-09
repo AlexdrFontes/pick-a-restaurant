@@ -11,14 +11,11 @@
   flex-direction: column;
   background-size: cover !important;
   align-items: center;
-  // justify-content: flex-end;
-  background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(61,61,61,0.68) 50%), url("http://res.cloudinary.com/dywzzd0as/image/upload/v1520512577/background.jpg");
-  background-repeat: no-repeat;
-  background-position: 60%;
+  justify-content: flex-end;
+
   padding-left: 0px;
   height:80vh;
   position: absolute;
-  z-index: 10;
   width:100%;
   text-align: center;
 
@@ -45,6 +42,18 @@
      justify-self: center;
   }
 
+}
+
+.banner-top-image {
+  background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(61,61,61,0.68) 50%), url("http://res.cloudinary.com/dywzzd0as/image/upload/v1520512577/background.jpg");
+  background-repeat: no-repeat;
+  background-position: 60%;
+  position: absolute;
+  background-size: cover;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
 }
 
 .banner-bottom{
