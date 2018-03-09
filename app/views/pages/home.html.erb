@@ -68,7 +68,7 @@
             <option value="Dinner">Dinner</option>
             <option value="Drinks">Drinks</option>
           </select> -->
-          <button class="btn btn-lg btn-start" id="a" type="button" action="/places/show" method="get" onclick="goToPlace()">
+          <button class="btn btn-lg btn-start" id="a" type="button" action="/places/show" method="get"  onclick="goToPlace()">
             <%= image_tag "Ellipse (1).png", {class: "button_pick"} %>
           </button>
           <!-- </form> -->
@@ -100,9 +100,14 @@
       },1000);
       return false;
     });
-    function goToPlace() {
+
+
+    $("#a").tap(function() {
       location.href = "/places/show?meal_type=" + $('.carousel .active').data('name');
-    }
+    }).hold(function() {
+      location.href = "/places/search?meal_type=" + $('.carousel .active').data('name');
+    })
+
     // var onlongtouch;
     // var timer;
     // var touchduration = 500; //length of time we want the user to touch before we do something
@@ -114,9 +119,20 @@
     //     if (timer)
     //         clearTimeout(timer); // clearTimeout, not cleartimeout..
     // }
-    // onlongtouch = function() {
+    // function onlongtouch() {
     //   alert('hello jnoairjio');
     // };
+
+
+    // function someFunc() {
+    //   onlongtouch();
+    //   goToPlace();
+    // }
+
+
+    function goToPlace() {
+      location.href = "/places/show?meal_type=" + $('.carousel .active').data('name');
+    }
   </script>
 
   <script type="text/javascript">
