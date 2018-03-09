@@ -73,7 +73,12 @@
     </div>
 
 
-        <button onclick=location=URL><%= image_tag("http://res.cloudinary.com/dywzzd0as/image/upload/v1520514430/again_button.png", class: "show-btn-again")%></button>
+        <%= image_tag("http://res.cloudinary.com/dywzzd0as/image/upload/v1520514430/again_button.png", class: "show-btn-again")%>
+      <script>
+        $('.show-btn-again').on('click', function() {
+          location.reload()
+        })
+      </script>
 
       </div>
   </div>
