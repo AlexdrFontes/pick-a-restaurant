@@ -3,6 +3,7 @@
 
 
 <%= form_for("search", :url => { :action => "show" }, :html => { :method => "GET"}) do |f| %>
+<input type="hidden" name="meal_type" value=<%= @meal_type %> >
   <div class="form-group">
     <%= f.select( :cuisine_types, @unique_types, {}, {multiple: true, id: "selectize"}) %>
   </div>
