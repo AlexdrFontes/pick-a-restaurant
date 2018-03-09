@@ -90,7 +90,9 @@
   bottom: -180px;
   margin-left: -45px;
 
-
+  img {
+    -webkit-touch-callout: none !important;
+  }
 }
 
 .button_pick {
@@ -164,3 +166,4 @@ font-size: 30px;
 
 
 
+.ui-loader { display: none; position: absolute; opacity: .85; z-index: 100; left: 50%; width: 200px; margin-left: -130px; margin-top: -35px; padding: 10px 30px; }
