@@ -10,7 +10,7 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
-// @import "selectize";
+@import "selectize";
 // @import "selectize.bootstrap3";
 
 // Your CSS partials
@@ -38,13 +38,4 @@
   }
 }
 
-.item {
-    background-image: linear-gradient(to bottom, #EB5757, #EB5757);
-    color: #ECECEB;
-}
-
-.selectize-control.multi .selectize-input > div.active {
-    background-image: linear-gradient(to bottom, #EB5757, #EB5757);
-    color: #ECECEB;
-}
 
