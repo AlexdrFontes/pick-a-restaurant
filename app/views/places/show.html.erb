@@ -24,39 +24,39 @@
         <h1><%=a.name %></h1>
         <% end %>
       </div>
-        <div class="show-meal-all" >
-          <% char = 0  %>
-          <% cuisines = []  %>
-          <% split = []  %>
-          <% a.cuisine_types.each do |cuisine|  %>
-          <% char = char + cuisine.name.size %>
-          <% cuisines << cuisine.name  %>
-          <% end %>
-          <% if char > 35  %>
-          <div class="show-meal-both">
-            <div class="show-meal-block">
-              <% cuisines[0..2].each do |cuisine| %>
-              <div class="show-meal">
-                <p><%= cuisine %></p>
-              </div>
-              <% end %>
-            </div>
-            <div class="show-meal-block second">
-              <% cuisines[3..-1].each do |cuisine| %>
-              <div class="show-meal">
-                <p><%= cuisine %></p>
-              </div>
-              <% end %>
-            </div>
-          </div>
-          <% else %>
-          <div class="show-meal-block second">
-            <% a.cuisine_types.each do |cuisine| %>
+      <div class="show-meal-all" >
+        <% char = 0  %>
+        <% cuisines = []  %>
+        <% split = []  %>
+        <% a.cuisine_types.each do |cuisine|  %>
+        <% char = char + cuisine.name.size %>
+        <% cuisines << cuisine.name  %>
+        <% end %>
+        <% if char > 35  %>
+        <div class="show-meal-both">
+          <div class="show-meal-block">
+            <% cuisines[0..2].each do |cuisine| %>
             <div class="show-meal">
-              <p><%=cuisine.name%></p>
+              <p><%= cuisine %></p>
             </div>
             <% end %>
-               </div>
+          </div>
+          <div class="show-meal-block second">
+            <% cuisines[3..-1].each do |cuisine| %>
+            <div class="show-meal">
+              <p><%= cuisine %></p>
+            </div>
+            <% end %>
+          </div>
+        </div>
+        <% else %>
+        <div class="show-meal-block second">
+          <% a.cuisine_types.each do |cuisine| %>
+          <div class="show-meal">
+            <p><%=cuisine.name%></p>
+          </div>
+          <% end %>
+        </div>
         <% end %>
         <div class="show-menu-price">
           <div class="show-price">
@@ -75,10 +75,13 @@
           </div>
         </div>
       </div>
+       <div class="show-down-btn">
+      <div class="show-btn-again">
+        <button onclick=location=URL><%= image_tag("http://res.cloudinary.com/dywzzd0as/image/upload/v1520514430/again_button.png", class: "show-btn-again")%></button>
+      </div>
     </div>
-    <div class="show-btn-again">
-      <button onclick=location=URL><%= image_tag("http://res.cloudinary.com/dywzzd0as/image/upload/v1520514430/again_button.png", class: "show-btn-again")%></button>
     </div>
+
   </div>
 </div>
 
