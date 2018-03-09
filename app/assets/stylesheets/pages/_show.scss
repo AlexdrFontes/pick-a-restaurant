@@ -40,6 +40,7 @@
   padding-left: 5px;
   padding-right: 5px;
   font-weight: bold;
+  height: 15vh;
   h1{
     font-size: 35px;
     padding-top: 40px;
@@ -141,12 +142,15 @@
 
 .show-meal-all{
   display:flex;
-   flex-direction: column;
-  justify-content: center;
+  flex-direction: column;
   justify-content: space-around;
   height: 171.5px;
-   border-bottom: 1px solid #EB5757; margin-top:10px;
-  border-top: 1px solid #EB5757; margin-bottom:10px;
+  border-bottom: 1px solid #EB5757;
+  border-top: 1px solid #EB5757;
+  margin-left: 20px;
+  margin-right: 20px;
+  height: 25vh;
+  padding-top: 5px;
 }
 
 .show-meal-both{
@@ -163,8 +167,13 @@
 }
 
 .show-pay-time{
-    display: flex;
+  display: flex;
   justify-content: center;
   padding-bottom: 10px;
 
+}
+
+.show-down-btn{
+  height: 10vh;
+  position: relative;
 }
