@@ -26,7 +26,7 @@ class PlacesController < ApplicationController
     end
 
 
-    if params[:search][:cuisine_types][1].present?
+    if (params[:search].present?) && (params[:search][:cuisine_types][1].present?)
 
       sql_query = " \
         cuisine_types.name @@ :cuisine_type \
