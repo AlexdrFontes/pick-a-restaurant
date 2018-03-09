@@ -84,12 +84,13 @@
     });
 
 
-    $("#a").tap(function() {
-      location.href = "/places/show?meal_type=" + $('.carousel .active').data('name');
 
+        $("#a").tap(function() {
+      location.href = "/places/show?meal_type=" + $('.carousel .active').data('name');
     }).hold(function() {
       location.href = "/places/search?meal_type=" + $('.carousel .active').data('name');
     });
+
 
     // var onlongtouch;
     // var timer;
@@ -117,9 +118,7 @@
       location.href = "/places/show?meal_type=" + $('.carousel .active').data('name');
     };
 
-  function init() {
-      preventLongPressMenu(document.getElementById('a'));
-    }
+
   </script>
 
   <script >
