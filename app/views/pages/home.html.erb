@@ -58,6 +58,26 @@
         </button>
       </div>
 
+
+
+
+
+
+      <a href=""><i class="fas fa-bars menu"></i></a>
+
+      <div class="banner-content">
+        <!-- <form class="form banner-form" action="/places/show" method="get"> -->
+          <!-- <select name="meal_type" id="meal">
+            <option value="Brunch">Brunch</option>
+            <option value="Lunch">Lunch</option>
+            <option value="Dinner">Dinner</option>
+            <option value="Drinks">Drinks</option>
+          </select> -->
+          <button class="btn btn-lg btn-start" id="a" type="button" action="/places/show" method="get"  onclick="goToPlace()">
+            <%= image_tag "Ellipse (1).png", {class: "button_pick"} %>
+          </button>
+          <!-- </form> -->
+
         </div>
 
 
@@ -86,9 +106,40 @@
       },1000);
       return false;
     });
+
+
+    $("#a").tap(function() {
+      location.href = "/places/show?meal_type=" + $('.carousel .active').data('name');
+
+    }).hold(function() {
+      location.href = "/places/search?meal_type=" + $('.carousel .active').data('name');
+    });
+
+    // var onlongtouch;
+    // var timer;
+    // var touchduration = 500; //length of time we want the user to touch before we do something
+    // touchstart() {
+    //     timer = setTimeout(onlongtouch, touchduration);
+    // }
+    // touchend() {
+    //     //stops short touches from firing the event
+    //     if (timer)
+    //         clearTimeout(timer); // clearTimeout, not cleartimeout..
+    // }
+    // function onlongtouch() {
+    //   alert('hello jnoairjio');
+    // };
+
+
+    // function someFunc() {
+    //   onlongtouch();
+    //   goToPlace();
+    // }
+
+
     function goToPlace() {
       location.href = "/places/show?meal_type=" + $('.carousel .active').data('name');
-    }
+    };
 
   </script>
 
