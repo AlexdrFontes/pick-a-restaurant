@@ -1,18 +1,19 @@
 <div class="col-xs-12" style= "padding: 0px">
   <div class="banner-container">
     <div class="banner-top">
-
-      <%= image_tag "http://res.cloudinary.com/dywzzd0as/image/upload/v1520515481/logo.svg", {class: "logo-home"}%>
-
-      <div class="slogan">
-        <p>You pick, we choose.</p>
+      <div class="text-home">
+        <div class = title>
+          <%= image_tag "http://res.cloudinary.com/dywzzd0as/image/upload/v1520515481/logo.svg", {class: "logo-home"}%>
+        </div>
+        <div class="slogan">
+          <p>You pick, we choose.</p>
+        </div>
       </div>
-
+      <a href=""><i class="fas fa-bars menu"></i></a>
       <div class="row ">
-        <div class="col-xs-12">
+        <div class="col-xs-12 centering">
           <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-interval="false">
 
-            <!-- Wrapper for slides -->
             <div class="carousel-inner" role="listbox">
 
               <div class="item active" data-name="Brunch">
@@ -52,7 +53,11 @@
             <span class="sr-only">Next</span>
           </a>
         </div>
+        <button class="btn btn-lg btn-start" id="a" type="button" action="/places/show" method="get" onclick="goToPlace()">
+          <%= image_tag "Ellipse (1).png", {class: "button_pick"} %>
+        </button>
       </div>
+
 
 
 
@@ -72,9 +77,10 @@
             <%= image_tag "Ellipse (1).png", {class: "button_pick"} %>
           </button>
           <!-- </form> -->
+
         </div>
 
-      </div>
+
       <div class="banner-bottom">
         <div class="banner-botton-text">
           <p>Long press for more settings</p>
@@ -88,9 +94,9 @@
 
 
 
-  <script type="text/javascript">
-    $("#a").mouseup(function(){
-      clearTimeout(pressTimer);
+<script type="text/javascript">
+  $("#a").mouseup(function(){
+    clearTimeout(pressTimer);
       // Clear timeout
       return false;
     }).mousedown(function(){
@@ -104,9 +110,10 @@
 
     $("#a").tap(function() {
       location.href = "/places/show?meal_type=" + $('.carousel .active').data('name');
+
     }).hold(function() {
       location.href = "/places/search?meal_type=" + $('.carousel .active').data('name');
-    })
+    });
 
     // var onlongtouch;
     // var timer;
@@ -132,32 +139,12 @@
 
     function goToPlace() {
       location.href = "/places/show?meal_type=" + $('.carousel .active').data('name');
-    }
+    };
+
   </script>
 
   <script type="text/javascript">
 
-
-
-   // var onlongtouch;
-    // var timer;
-    // var touchduration = 500; //length of time we want the user to touch before we do something
-
-    // touchstart() {
-    //     timer = setTimeout(onlongtouch, touchduration);
-    // }
-
-    // touchend() {
-
-    //     //stops short touches from firing the event
-    //     if (timer)
-    //         clearTimeout(timer); // clearTimeout, not cleartimeout..
-    // }
-
-    // onlongtouch = function() {
-
-    //   alert('hello jnoairjio');
-    // };
 
 
   </script>

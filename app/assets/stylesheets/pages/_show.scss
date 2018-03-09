@@ -5,9 +5,10 @@
 
 .show-btn-again{
   position:absolute;
-  bottom:10px;
-  right:10px;
+  bottom:5px;
+  right:5px;
   width: 35px;
+  cursor: pointer;
 }
 
 .banner-show-top {
@@ -23,7 +24,7 @@
 
 .show-down{
   text-align: center;
-  height:40vh;
+  height:50vh;
   width: 100%;
   h1 {
     margin: 0;
@@ -39,31 +40,31 @@
 .show-title{
   padding-left: 5px;
   padding-right: 5px;
-   font-weight: bold;
+  font-weight: bold;
+  height: 15vh;
   h1{
     font-size: 35px;
     padding-top: 40px;
-    padding-bottom: 30px;
+    padding-bottom: 15px;
 
   }
-   h2{
+  h2{
     font-size: 28px;
     padding-top: 30px;
-    padding-bottom: 20px;
+    padding-bottom: 10px;
     margin-top:12.5px;
 
   }
   h3{
-       font-size: 22px;
-    padding-top: 30px;
-    padding-bottom: 20px;
-    margin-top:12.5px;
-  }
+   font-size: 22px;
+   padding-top: 30px;
+   padding-bottom: 10px;
+   margin-top:12.5px;
+ }
 }
 
 .show-meal{
   display: flex;
-
   border: 1px solid #EB5757;
   color:#EB5757;
   padding:3px;
@@ -86,15 +87,11 @@
   width: 70px;
 }
 
-.show-meal-all{
-  display:flex;
-  justify-content: center;
-  margin-bottom:20px;
-}
+
 
 .people-icon{
   height: 25px;
-  margin-left: 3px;
+  margin-left: 5px;
 
 }
 
@@ -107,7 +104,7 @@
   display:flex;
   justify-content: center;
   height: auto;
-margin-right: 15px;
+  margin-right: 15px;
 
   p{
     margin:0px;
@@ -118,11 +115,10 @@ margin-right: 15px;
   display: flex;
   justify-content: center;
 
-
 }
 
 .show-menu{
-display:flex;
+  display:flex;
   justify-content: center;
   height: auto;
   margin-left: 15px;
@@ -141,6 +137,44 @@ display:flex;
 
 
 .clock-icon{
-height: 25px;
+  height: 25px;
   margin-right: 3px
+}
+
+.show-meal-all{
+  display:flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 171.5px;
+  border-bottom: 1px solid #EB5757;
+  border-top: 1px solid #EB5757;
+  margin-left: 20px;
+  margin-right: 20px;
+  height: 25vh;
+  padding-top: 5px;
+}
+
+.show-meal-both{
+  display:flex;
+  flex-direction: column;
+}
+.show-meal-block{
+  display: flex;
+  justify-content: center;
+}
+
+.second{
+  margin-bottom: 10px;
+}
+
+.show-pay-time{
+  display: flex;
+  justify-content: center;
+  padding-bottom: 10px;
+
+}
+
+.show-down-btn{
+  height: 10vh;
+  position: relative;
 }
