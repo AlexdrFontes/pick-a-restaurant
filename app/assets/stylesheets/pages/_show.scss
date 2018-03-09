@@ -42,24 +42,38 @@
   padding-right: 5px;
   font-weight: bold;
   height: 15vh;
+  display: flex;
+  align-items: center;
   h1{
-    font-size: 35px;
-    padding-top: 40px;
-    padding-bottom: 15px;
+        padding-top: 30px;
+    padding-bottom: 10px;
+    margin-top: 12.5px;
+    max-width: 80%;
+    text-align: center;
+    margin: 0 auto;
+    font-size: calc(100% + 4vw);
 
   }
   h2{
-    font-size: 28px;
-    padding-top: 30px;
+
+       padding-top: 30px;
     padding-bottom: 10px;
-    margin-top:12.5px;
+    margin-top: 12.5px;
+    max-width: 80%;
+    text-align: center;
+    margin: 0 auto;
+    font-size: calc(100% + 2vw);
 
   }
   h3{
-   font-size: 22px;
-   padding-top: 30px;
-   padding-bottom: 10px;
-   margin-top:12.5px;
+
+       padding-top: 30px;
+    padding-bottom: 10px;
+    margin-top: 12.5px;
+    max-width: 80%;
+    text-align: center;
+    margin: 0 auto;
+    font-size: calc(100% + 1vw);
  }
 }
 
