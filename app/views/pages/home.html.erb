@@ -59,9 +59,7 @@
           <%= image_tag "http://res.cloudinary.com/dywzzd0as/image/upload/v1520523777/Ellipse.svg", {class: "button_pick"} %>
         </button>
       </div>
-        </div>
-
-
+    </div>
       <div class="banner-bottom">
         <div class="banner-botton-text">
           <p>Long press for more settings</p>
@@ -78,53 +76,27 @@
       return false;
     }).mousedown(function(){
       // Set timeout
-      this.preventDefault();
+      // this.preventDefault();
       pressTimer = window.setTimeout(function() {
         location.href = "/places/search?meal_type=" + $('.carousel .active').data('name');
       },1000);
       return false;
     });
-
-    $("#a").taphold(function(){
-        // Set timeout
-        pressTimer = window.setTimeout(function() {
-          location.href = "/places/search?meal_type=" + $('.carousel .active').data('name');
-        },1000);
-        return false;
-    });
-
-
-
-
-        $(function(){
-  $( "btn btn-lg btn-start" ).bind( "taphold", tapholdHandler );
-
-  function tapholdHandler( event ){
-    $( event.target ).addClass( "taphold" );
-  }
-});
+  //   $("#a").taphold(function(){
+  //       // Set timeout
+  //       pressTimer = window.setTimeout(function() {
+  //         location.href = "/places/search?meal_type=" + $('.carousel .active').data('name');
+  //       },1000);
+  //       return false;
+  //   });
+  //       $(function(){
+  // $( "btn btn-lg btn-start" ).bind( "taphold", tapholdHandler );
+  // function tapholdHandler( event ){
+  //   $( event.target ).addClass( "taphold" );
+  // }
 
 
-    // var onlongtouch;
-    // var timer;
-    // var touchduration = 500; //length of time we want the user to touch before we do something
-    // touchstart() {
-    //     timer = setTimeout(onlongtouch, touchduration);
-    // }
-    // touchend() {
-    //     //stops short touches from firing the event
-    //     if (timer)
-    //         clearTimeout(timer); // clearTimeout, not cleartimeout..
-    // }
-    // function onlongtouch() {
-    //   alert('hello jnoairjio');
-    // };
 
-
-    // function someFunc() {
-    //   onlongtouch();
-    //   goToPlace();
-    // }
 
 
     function goToPlace() {
