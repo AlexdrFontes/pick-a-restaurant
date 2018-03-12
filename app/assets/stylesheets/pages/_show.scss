@@ -189,6 +189,11 @@
 }
 
 .show-down-btn{
-  height: 10vh;
-  position: relative;
+
+  background-color: Transparent;
+  background-repeat:no-repeat;
+  border: none;
+  cursor:pointer;
+  overflow: hidden;
+  outline:none;
 }
