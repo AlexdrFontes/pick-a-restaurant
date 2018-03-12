@@ -1,0 +1,158 @@
+
+.tab-area{
+  margin-top: 5em;
+}
+
+.card-last{
+  display:flex;
+  position:relative;
+  align-items: center;
+  height: 10vh;
+  margin-bottom: 10px;
+  justify-content: space-around;
+  p{
+    font-size: 0.7em;
+    padding-bottom:3px;
+  }
+}
+
+.last-photo{
+  height: 100%;
+  width: 15vh;
+  background-size: cover;
+  background-position: center;
+}
+
+.mypicks-photo{
+  height: 100%;
+  width: 10vh;
+  background-size: cover;
+  background-position: center;
+
+}
+
+.last-name{
+  width: 40vw;
+  color:black;
+  margin-left: 1em;
+   p{
+    margin: 0;
+  }
+
+}
+
+.mypicks-name{
+
+  width: 30vw;
+  margin: 0;
+  color:black;
+  p{
+    margin: 0;
+  }
+}
+
+.last-status{
+  width: 15vw;
+  z-index: 100;
+  p{
+    margin: 0;
+  }
+}
+
+.mypicks-status{
+  width: 10vw;
+  z-index: 100;
+
+  a {
+  color: #469AE0;
+  }
+  p {
+    margin: 0px;
+  }
+}
+
+.mypicks-phone{
+  width: 5vw;
+  z-index: 200;
+}
+
+.img_btn_2{
+width: 35px;
+
+}
+
+// p {
+//   margin:0;
+// }
+
+#exTab1 .tab-content {
+  color : white;
+  background-color: #428bca;
+  padding : 5px 15px;
+}
+
+#exTab2 h3 {
+  color : white;
+  background-color: #428bca;
+  padding : 5px 15px;
+}
+
+/* remove border radius for the tab */
+
+#exTab1 .nav-pills > li > a {
+  border-radius: 0;
+}
+
+/* change border radius for the tab , apply corners on top*/
+
+#exTab3 .nav-pills > li > a {
+  border-radius: 4px 4px 0 0 ;
+}
+
+#exTab3 .tab-content {
+  color : white;
+  background-color: #428bca;
+  padding : 5px 15px;
+}
+
+.nav-pills > li.active > a,
+.nav-pills > li.active > a:focus,
+.nav-pills > li.active > a:hover {
+  background-color: #EB5757;
+}
+
+
+.nav-pills > li > a:hover {
+  background-color: #EB5757;
+  color: white;
+}
+
+a{
+  color: #EB5757;
+}
+
+#exTab1 .tab-content {
+  background-color: white;
+}
+
+li {
+  font-size: 0.7em;
+}
+
+
+.card-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  background: black;
+  opacity: 0;
+}
+.card-link:hover {
+  opacity: 0.1;
+}
+
+a:hover{
+  text-decoration: none;
+}
