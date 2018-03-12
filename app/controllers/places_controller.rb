@@ -63,7 +63,7 @@ class PlacesController < ApplicationController
 
     def my_places
 
-      @places = current_user.places_histories.order(:id).map(&:place)
+      @places = current_user.places_histories.order(:id).map(&:place).reverse
 
 
 
