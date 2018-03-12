@@ -13,7 +13,6 @@ class PlacesController < ApplicationController
     @places = Place.all
     @cuisine_types = CuisineType.all
     @unique_types = @cuisine_types.select(:id,:name).uniq{|a| a.name}.map{ |a| [a.name,a.id]}
-    raise
     if params.values_at(:place, :radius).all?(&:present?)
       @places = Place.near(params[:place], params[:radius])
     end
