@@ -7,7 +7,13 @@ Rails.application.routes.draw do
 
   get 'places/results', to: 'places#results'
 
+  get 'places/my_places'  , to: 'places#my_places', as: 'places_my_places'
+
+  get 'places/:id/saved', to: 'places#save_id', as: 'places_save_id'
+
   get 'places/:id', to: 'places#show_id', as: 'places_show_id'
+
+
 
 
 
