@@ -50,8 +50,22 @@
 </div>
 </div>
 
+<script>
+  var placesAutocomplete = places({
+    container: document.querySelector('#place_address'),
+    countries: ['pt'],
 
-
+  });
+</script>
+<!-- <script>
+var placesAutocomplete = {
+  container: document.querySelector('#place_address'),
+  language: 'en', // Receives results in German
+  countries: ['pt'], //
+  type: 'city', // Search only for cities names
+  aroundLatLngViaIP: true // disable the extra search/boost around the source IP
+};
+</script> -->
 
 
 
