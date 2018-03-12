@@ -1,5 +1,7 @@
 $(function() {
 
+
+
   // Initiate Slider
   $("#slider-range").slider({
     range: true,
@@ -99,3 +101,5 @@ $(function() {
   });
 
 });
+
+$(".ui-slider-handle").draggable();
