@@ -41,9 +41,16 @@
       <p>Max. Price<input class="form-control mr-sm-2" id="max_price" type="text" name="max_price" placeholder="0" action="/places/show method="get" style="width: 220px;"></p>
   </div>
 
+  <div class="form-group">
+      <%= render 'double-slider' %>
+  </div>
+
+
   <button class="btn-bike-me" type="submit" method="get">Apply Filters</button>
 
   <% end %>
+
+
 
       </div>
     </div>
@@ -51,4 +58,6 @@
     </div>
   </div>
 </div>
+
+
 
