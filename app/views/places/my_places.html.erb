@@ -10,7 +10,7 @@
       </ul>
       <div class="tab-content clearfix">
         <div class="tab-pane active" id="1a">
-          <%@places.each do |place|  %>
+          <%@places[0..10].each do |place|  %>
           <div class="card-last">
             <div class="last-photo" style="background-image: url(<%= place.featured_image%>);">
             </div>
