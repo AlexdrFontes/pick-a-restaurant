@@ -7,20 +7,23 @@
 
 
       <%= form_for("search", :url => { :action => "show" }, :html => { :method => "GET"}) do |f| %>
+     <h3> <%= "What do you want to eat?" %> </h3>
       <input type="hidden" name="meal_type" value=<%= @meal_type %> >
       <div class="form-group">
         <%= f.select( :cuisine_types, @unique_types, {}, {multiple: true, id: "selectize"}) %>
       </div>
-      <input class="form-control mr-sm-2" id="place_address"  type="text" name="place" placeholder="City" action="/places/show method="get" style="width: 220px;">
-
+     <h3> <%= "Where" %> </h3>
+      <div class="form-group">
+      <input class="form-control mr-sm-2" id="place_address"  type="text" name="place" placeholder="Largo do Chiado?" action="/places/show method="get" style="width: 220px;">
+      </div>
 
 <!-- Location
      Radius
    -->
    <!-- <input class="form-control mr-sm-2" type="text" name="radius" placeholder="Radius" action="/places/show method="get" style="width: 220px;"> -->
    <div class="slidecontainer">
-    <input class="form-control" type="range" min="0" max="30" step="0.1" value="0" name="radius" id="myRange" action="/places/show" method="get">
-    <p>Value: <span id="demo"></span></p>
+    <input class="form-control" type="range" min="0" max="30" step="0.1" value="1.5" name="radius" id="myRange" action="/places/show" method="get">
+    <p>Distance km: <span id="demo"></span></p>
   </div>
   <script>
     var slider = document.getElementById("myRange");
