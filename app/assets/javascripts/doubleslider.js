@@ -5,7 +5,7 @@ $(function() {
     range: true,
     min: 10,
     max: 180,
-    step: 1,
+    step: 0.1,
     values: [0, 180]
   });
 
