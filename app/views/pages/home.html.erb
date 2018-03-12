@@ -58,12 +58,12 @@
       </a>
     </div>
     <div class="button">
-    <button class="btn btn-lg btn-start" id="a" type="button" action="/places/show" method="get" onclick="goToPlace()">
+    <button class="btn btn-lg btn-start" id="a" type="button" onclick="goToPlace()">
       <%= image_tag "http://res.cloudinary.com/dywzzd0as/image/upload/v1520523777/Ellipse.svg", {class: "button_pick"} %>
     </button>
     </div>
   </div>
-  
+
     <div class="banner-botton-text">
       <p>Long press for more settings</p>
     </div>
@@ -71,23 +71,49 @@
 </div>
 
 
-
+<% content_for(:after_js) do %>
 
 <script type="text/javascript">
-  $("#a").mouseup(function(){
-    clearTimeout(pressTimer);
-      // Clear timeout
-      return false;
-    }).mousedown(function(){
-      // Set timeout
-      // this.preventDefault();
-      pressTimer = window.setTimeout(function() {
-        location.href = "/places/search?meal_type=" + $('.carousel .active').data('name');
-      },1000);
-      return false;
-    });
-  //   $("#a").taphold(function(){
-  //       // Set timeout
+var my_link = document.getElementById("a");
+
+
+var hammertime = new Hammer(my_link);
+hammertime.on('press', function() {
+  location.href = "/places/search?meal_type=" + $('.carousel .active').data('name');
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  // $("#a").mouseup(function(){
+  //   clearTimeout(pressTimer);
+  //     // Clear timeout
+  //     return false;
+  //   }).mousedown(function(){
+  //     // Set timeout
+  //     // this.preventDefault();
+  //     pressTimer = window.setTimeout(function() {
+  //       location.href = "/places/search?meal_type=" + $('.carousel .active').data('name');
+  //     },1000);
+  //     return false;
+  //   });
+
+
+  // $("#a").on("taphold",
+  //                  {clickHandler: function() { location.href = "/places/show?meal_type=" + $('.carousel .active').data('name');}},
+  //                  function() { location.href = "/places/search?meal_type=" + $('.carousel .active').data('name'); });
   //       pressTimer = window.setTimeout(function() {
   //         location.href = "/places/search?meal_type=" + $('.carousel .active').data('name');
   //       },1000);
@@ -107,7 +133,7 @@
 
 
 </script>
-
+<% end %>
 
 
 
