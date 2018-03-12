@@ -26,13 +26,19 @@
           output.innerHTML = this.value;
         }
       </script>
-      <div class="form-group">
+
+    <div class="form-group">
+      <%= render 'double-slider' %>
+    </div>
+<!--       <div class="form-group">
 
         <p>Min. Price<input class="form-control mr-sm-2" id="min_price" type="text" name="min_price" placeholder="0" action="/places/show" method="get"></p>
         <p>Max. Price<input class="form-control mr-sm-2" id="max_price" type="text" name="max_price" placeholder="0" action="/places/show" method="get"></p>
-      </div>
+      </div> -->
       <button class="btn-bike-me" type="submit" method="get">Apply Filters</button>
       <% end %>
+
+
     </div>
   <div class="button-pick">
     <button class="btn btn-lg btn-start" id="a" type="button" action="/places/show" method="get" onclick="goToPlace()">
@@ -42,9 +48,7 @@
   </div>
 
 
-  <div class="form-group">
-      <%= render 'double-slider' %>
-  </div>
+
 
 
 
