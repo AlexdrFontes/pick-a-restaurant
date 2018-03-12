@@ -11,7 +11,9 @@
 @import "font-awesome";
 
 @import "selectize";
+
 @import "selectize.bootstrap3";
+
 
 // Your CSS partials
 @import "layouts/index";
@@ -38,6 +40,7 @@
   }
 }
 
+
 .item {
     // background-image: linear-gradient(to bottom, #EB5757, #EB5757);
     color: #ECECEB;
@@ -48,4 +51,5 @@
     background-image: linear-gradient(to bottom, #EB5757, #EB5757);
     color: #ECECEB;
 }
+
 
