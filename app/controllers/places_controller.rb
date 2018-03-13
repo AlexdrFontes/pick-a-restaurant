@@ -16,8 +16,6 @@ class PlacesController < ApplicationController
     else
      @address = @first_result.address
    end
-
-
  end
 
  def show
