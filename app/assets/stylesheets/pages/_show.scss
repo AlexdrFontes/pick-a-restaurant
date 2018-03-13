@@ -1,6 +1,6 @@
 .show-all{
   position: relative;
-  height:100vh;
+  height:50vh;
 }
 
 .show-btn-again{
@@ -34,7 +34,7 @@
 .show-buttons{
   display: flex;
   justify-content: space-around;
-  margin-bottom: -25.5px;
+  margin-top: -36.5px;
 }
 
 .show-title{
@@ -231,4 +231,8 @@
   justify-content: center;
   margin-left: 17px;
   margin-top:-12px;
+}
+
+a {
+  z-index: 1000;
 }
