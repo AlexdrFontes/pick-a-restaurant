@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   root to: 'pages#home'
 
   get 'places/show'
@@ -13,7 +14,9 @@ Rails.application.routes.draw do
 
   get 'places/:id', to: 'places#show_id', as: 'places_show_id'
 
+  get "/404", :to => "errors#not_found", as: 'error_404',:via => :all
 
+  get "/500", :to => "errors#internal_server_error", as: 'error_500', :via => :all
 
 
 
