@@ -20,9 +20,9 @@ Geocoder.configure(
 units: :km,                 # :km for kilometers or :mi for miles
   # distances: :linear          # :spherical or :linear
   # config/initializers/geocoder.rb
-  # lookup:    :google,
-# api_key:   ENV['GOOGLE_API_SERVER_KEY'],
-  # use_https: true,
+ lookup:    :google,
+ api_key:   ENV['GOOGLE_API_SERVER_KEY'],
+ use_https: true,
   # [...]
 )
 
