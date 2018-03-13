@@ -16,9 +16,11 @@
 
     <div class="show-down">
       <div class="show-title">
-        <% if a.name.size > 45 %>
+        <% if a.name.size > 40 %>
+        <h4><%=a.name %></h4>
+        <% elsif a.name.size > 20 %>
         <h3><%=a.name %></h3>
-        <% elsif a.name.size > 22 %>
+        <% elsif a.name.size > 15 %>
         <h2><%=a.name %></h2>
         <% else %>
         <h1><%=a.name %></h1>
