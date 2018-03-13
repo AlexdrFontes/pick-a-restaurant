@@ -1,8 +1,8 @@
 Geocoder.configure(
   # Geocoding options
   # timeout: 3,                 # geocoding service timeout (secs)
-  # lookup: :google,            # name of geocoding service (symbol)
-  # ip_lookup: :freegeoip,      # name of IP address geocoding service (symbol)
+  lookup: :google,            # name of geocoding service (symbol)
+  ip_lookup: :freegeoip,      # name of IP address geocoding service (symbol)
   # language: :en,              # ISO-639 language code
   # use_https: false,           # use HTTPS for lookup requests? (if supported)
   # http_proxy: nil,            # HTTP proxy server (user:pass@host:port)
@@ -20,9 +20,9 @@ Geocoder.configure(
 units: :km,                 # :km for kilometers or :mi for miles
   # distances: :linear          # :spherical or :linear
   # config/initializers/geocoder.rb
-  # lookup:    :google,
-  # api_key:   ENV['GOOGLE_API_SERVER_KEY'],
-  # use_https: true,
+ lookup:    :google,
+ api_key:   ENV['GOOGLE_API_SERVER_KEY'],
+ use_https: true,
   # [...]
 )
 

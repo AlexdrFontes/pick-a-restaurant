@@ -1,3 +1,4 @@
+<%= render 'shared/menu' %>
 <div class="main-container">
 <div class="banner-container no-pad">
   <%=  link_to (image_tag "http://res.cloudinary.com/dywzzd0as/image/upload/v1520856923/Group_2_1.svg", {class: "logo"}), root_path %>
@@ -10,27 +11,44 @@
       <%= f.select( :cuisine_types, @unique_types, {}, {multiple: true, id: "selectize"}) %>
     </div>
 
+
+
+<!-- <p id="demo1"></p>
+<p id="demo2"></p>
+
+<script>
+var lat = document.getElementById("demo1");
+var lon = document.getElementById("demo2");
+
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+    } else {
+        lat.innerHTML = "Geolocation is not supported by this browser.";
+    }
+}
+
+function showPosition(position) {
+    lat.innerHTML = position.coords.latitude
+    lon.innerHTML =  position.coords.longitude;
+
+}
+
+
+getLocation();
+
+</script> -->
+
+
     <div class="form-group">
-      <input class="form-control mr-sm-2" id="place_address"  type="text" name="place" placeholder="Largo do Chiado?" action="/places/show" method="get">
+      <input class="form-control mr-sm-2" id="place_address"  type="text" name="place" action="/places/show" method="get" >
     </div>
-    <div class="slidecontainer">
-      <input class="form-control" type="range" min="0" max="30" step="0.1" value="1.5" name="radius" id="myRange" action="/places/show" method="get">
-      <p>Distance km: <span id="demo"></span></p>
+
+
+    <div class="form-group">
+      <%= render 'range-slider' %>
     </div>
-    <script>
-      var slider = document.getElementById("myRange");
-      var output = document.getElementById("demo");
-      output.innerHTML = slider.value;
 
-      slider.oninput = function() {
-        output.innerHTML = this.value;
-      }
-    </script>
-   <!--  <div class="form-group">
-
-      <p>Min. Price<input class="form-control mr-sm-2" id="min_price" type="text" name="min_price" placeholder="0" action="/places/show" method="get"></p>
-      <p>Max. Price<input class="form-control mr-sm-2" id="max_price" type="text" name="max_price" placeholder="0" action="/places/show" method="get"></p>
-    </div> -->
     <div class="form-group">
       <%= render 'double-slider' %>
     </div>
@@ -41,13 +59,81 @@
       </button>
     <% end %>
   </div>
-
-
-
-
-
 </div>
 </div>
+</div>
+
+
+
+<!-- <script type="text/javascript">
+  function initialize() {
+
+  var input = document.getElementById('place_address');
+  var autocomplete = new google.maps.places.Autocomplete(input);
+  }
+
+  google.maps.event.addDomListener(window, 'load', initialize);
+</script> -->
+
+
+
+
+     <script type="text/javascript" charset="utf-8">
+
+     $(document).ready(function() {
+         var currgeocoder;
+
+         //Set geo location lat and long
+
+         navigator.geolocation.getCurrentPosition(function(position, html5Error) {
+
+             geo_loc = processGeolocationResult(position);
+             currLatLong = geo_loc.split(",");
+             initializeCurrent(currLatLong[0], currLatLong[1]);
+
+        });
+
+        //Get geo location result
+
+       function processGeolocationResult(position) {
+             html5Lat = position.coords.latitude; //Get latitude
+             html5Lon = position.coords.longitude; //Get longitude
+             html5TimeStamp = position.timestamp; //Get timestamp
+             html5Accuracy = position.coords.accuracy; //Get accuracy in meters
+             return (html5Lat).toFixed(8) + ", " + (html5Lon).toFixed(8);
+       }
+
+        //Check value is present or not & call google api function
+
+        function initializeCurrent(latcurr, longcurr) {
+             currgeocoder = new google.maps.Geocoder();
+             console.log(latcurr + "-- ######## --" + longcurr);
+
+             if (latcurr != '' && longcurr != '') {
+                 var myLatlng = new google.maps.LatLng(latcurr, longcurr);
+                 return getCurrentAddress(myLatlng);
+             }
+       }
+
+        //Get current address
+
+         function getCurrentAddress(location) {
+              currgeocoder.geocode({
+                  'location': location
+
+            }, function(results, status) {
+
+                if (status == google.maps.GeocoderStatus.OK) {
+                    console.log("address:", results[0]);
+                    $("#place_address").val(results[0].formatted_address);
+                } else {
+                    alert('Geocode was not successful for the following reason: ' + status);
+                }
+            });
+         }
+    });
+
+    </script>
 
 
 

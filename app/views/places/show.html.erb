@@ -1,4 +1,4 @@
-
+<%= render 'shared/menu' %>
 <% a = @place %>
 <div class="col-xs-12" style= "padding: 0px">
   <div class= "show-all">
@@ -68,18 +68,17 @@
             <p class="menu-text">CHECK ME</p>
           </div>
         </div>
-        <div class="show-pay-time">
-          <div class="show-time">
+        <div class="show-menu-price2">
+          <div class="show-price">
+            <strong><p id="rating"><%=a.user_rating%></p></strong>
+          </div>
+          <div class="show-menu2">
             <%= image_tag "clock.svg", {class: "clock-icon"}%>
-            <p class="hours"><%=a.opening_time%> - <%=a.closing_time%></p>
+            <p class="price"><%=a.opening_time%> - <%=a.closing_time%></p>
           </div>
         </div>
       </div>
-
-        <%#= link_to image_tag("http://res.cloudinary.com/dywzzd0as/image/upload/v1520514430/again_button.png",=location=URL, class: "show-btn-again")  %>
-
-        <div onclick=location=URL><%= image_tag("http://res.cloudinary.com/dywzzd0as/image/upload/v1520514430/again_button.png", class: "show-btn-again")%></div>
-
+      <div onclick=location=URL><%= image_tag("http://res.cloudinary.com/dywzzd0as/image/upload/v1520514430/again_button.png", class: "show-btn-again")%>
       </div>
     </div>
   </div>
