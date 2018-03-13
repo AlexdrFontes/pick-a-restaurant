@@ -11,20 +11,20 @@ class PlacesController < ApplicationController
 
  def show
 
+
   @places = Place.all
   @cuisine_types = CuisineType.all
   @unique_types = @cuisine_types.select(:id,:name).uniq{|a| a.name}.map{ |a| [a.name,a.id]}
 
-  if params.values_at(:place, :radius).all?(&:present?)
-    @places = Place.near(params[:place], params[:radius])
-  end
-
-  if params[:meal_type].present?
-    sql_query = " \
-    meal_types.name @@ :meal_type \
-    "
-    @places = @places.joins(:meal_types).where(sql_query, meal_type: "%#{params[:meal_type]}%")
-  end
+    if params.values_at(:place, :rangeslider).all?(&:present?)
+      @places = Place.near(params[:place], params[:rangeslider])
+    end
+    if params[:meal_type].present?
+      sql_query = " \
+      meal_types.name @@ :meal_type \
+      "
+      @places = @places.joins(:meal_types).where(sql_query, meal_type: "%#{params[:meal_type]}%")
+    end
 
 
   if params[:search] && params[:search][:cuisine_types].any? && params[:search][:cuisine_types][1].present?

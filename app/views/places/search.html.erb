@@ -43,24 +43,15 @@ getLocation();
     <div class="form-group">
       <input class="form-control mr-sm-2" id="place_address"  type="text" name="place" action="/places/show" method="get" >
     </div>
-    <div class="slidecontainer">
-      <input class="form-control" type="range" min="0" max="30" step="0.1" value="1.5" name="radius" id="myRange" action="/places/show" method="get">
-      <p>Distance km: <span id="demo"></span></p>
-    </div>
-    <!-- <script>
-      var slider = document.getElementById("myRange");
-      var output = document.getElementById("demo");
-      output.innerHTML = slider.value;
 
-      slider.oninput = function() {
-        output.innerHTML = this.value;
-      }
-    </script> -->
    <!--  <div class="form-group">
 
       <p>Min. Price<input class="form-control mr-sm-2" id="min_price" type="text" name="min_price" placeholder="0" action="/places/show" method="get"></p>
       <p>Max. Price<input class="form-control mr-sm-2" id="max_price" type="text" name="max_price" placeholder="0" action="/places/show" method="get"></p>
     </div> -->
+    <div class="form-group">
+      <%= render 'range-slider' %>
+    </div>
     <div class="form-group">
       <%= render 'double-slider' %>
     </div>
