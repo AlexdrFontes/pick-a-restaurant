@@ -1,3 +1,4 @@
+<%= render 'shared/menu' %>
 <div class="main-container">
 <div class="banner-container no-pad">
   <%=  link_to (image_tag "http://res.cloudinary.com/dywzzd0as/image/upload/v1520856923/Group_2_1.svg", {class: "logo"}), root_path %>
@@ -49,8 +50,22 @@
 </div>
 </div>
 
+<script>
+  var placesAutocomplete = places({
+    container: document.querySelector('#place_address'),
+    countries: ['pt'],
 
-
+  });
+</script>
+<!-- <script>
+var placesAutocomplete = {
+  container: document.querySelector('#place_address'),
+  language: 'en', // Receives results in German
+  countries: ['pt'], //
+  type: 'city', // Search only for cities names
+  aroundLatLngViaIP: true // disable the extra search/boost around the source IP
+};
+</script> -->
 
 
 
