@@ -6,16 +6,7 @@ class PlacesController < ApplicationController
     @cuisine_types = CuisineType.all
     @unique_types = @cuisine_types.select(:id,:name).uniq{|a| a.name}.map{ |a| [a.name,a.id]}
     @meal_type = params[:meal_type]
-    @lat = request.location.latitude
-    @lon = request.location.longitude
-    @query = "#{@lat},#{@lon}"
-    @first_result = Geocoder.search(@query).first
 
-    if @first_result == nil
-      @address = ""
-    else
-     @address = @first_result.address
-   end
  end
 
  def show
