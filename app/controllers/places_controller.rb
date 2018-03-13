@@ -14,10 +14,9 @@ class PlacesController < ApplicationController
     @cuisine_types = CuisineType.all
     @unique_types = @cuisine_types.select(:id,:name).uniq{|a| a.name}.map{ |a| [a.name,a.id]}
 
-    if params.values_at(:place, :radius).all?(&:present?)
-      @places = Place.near(params[:place], params[:radius])
+    if params.values_at(:place, :rangeslider).all?(&:present?)
+      @places = Place.near(params[:place], params[:rangeslider])
     end
-
     if params[:meal_type].present?
       sql_query = " \
       meal_types.name @@ :meal_type \
