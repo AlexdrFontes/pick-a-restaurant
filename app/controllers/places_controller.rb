@@ -6,18 +6,19 @@ class PlacesController < ApplicationController
     @cuisine_types = CuisineType.all
     @unique_types = @cuisine_types.select(:id,:name).uniq{|a| a.name}.map{ |a| [a.name,a.id]}
     @meal_type = params[:meal_type]
-  end
 
-  def show
+ end
 
-    @places = Place.all
-    @cuisine_types = CuisineType.all
-    @unique_types = @cuisine_types.select(:id,:name).uniq{|a| a.name}.map{ |a| [a.name,a.id]}
+ def show
 
-    if params.values_at(:place, :radius).all?(&:present?)
-      @places = Place.near(params[:place], params[:radius])
+
+  @places = Place.all
+  @cuisine_types = CuisineType.all
+  @unique_types = @cuisine_types.select(:id,:name).uniq{|a| a.name}.map{ |a| [a.name,a.id]}
+
+    if params.values_at(:place, :rangeslider).all?(&:present?)
+      @places = Place.near(params[:place], params[:rangeslider])
     end
-
     if params[:meal_type].present?
       sql_query = " \
       meal_types.name @@ :meal_type \
@@ -26,18 +27,18 @@ class PlacesController < ApplicationController
     end
 
 
-     if params[:search] && params[:search][:cuisine_types].any? && params[:search][:cuisine_types][1].present?
+  if params[:search] && params[:search][:cuisine_types].any? && params[:search][:cuisine_types][1].present?
 
-      sql_query = " \
-      cuisine_types.name @@ :cuisine_type \
-      "
+    sql_query = " \
+    cuisine_types.name @@ :cuisine_type \
+    "
 
 
-      @places = @places.where(place_cuisine_types: { cuisine_type_id: params[:search][:cuisine_types] }).includes(:place_cuisine_types).references(:place_cuisine_types)
+    @places = @places.where(place_cuisine_types: { cuisine_type_id: params[:search][:cuisine_types] }).includes(:place_cuisine_types).references(:place_cuisine_types)
 
-    end
+  end
 
-    if params[:min_price].present?
+  if params[:min_price].present?
        # @places = @places.joins(:places).where(sql_query, min_price: "%#{params[:min_price]}%")
        min = params[:min_price].to_i
        @places = @places.where("average_cost_for_two >= ?",min)

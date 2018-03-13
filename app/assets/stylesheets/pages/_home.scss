@@ -60,6 +60,7 @@
 .carousel-control {
   background-image: none !important;
   color: #EB5757;
+  margin: 50px;
   :hover {
     color: #EB5757;
   }
@@ -92,14 +93,28 @@
   text-transform: uppercase;
   color: white;
   width: 240px;
-  margin: 25% auto 8% auto;
+  margin: 20% auto 8% auto;
   text-align: center;
 }
 
-@media screen and (min-width: 1280px) {
-  .slogan  {
 
-  }
+@media (min-width: 750px) {
+.container {
+   width: auto;
+ }
+ .form-group {
+  margin-bottom: 80px;
+ }
+ .slidecontainer {
+  margin-bottom: 80px;
+ }
+ .details {
+  margin: 20px auto;
+  width: 50%;
+ }
+ .banner-botton-text {
+  margin: 50px auto;
+ }
 
 }
 

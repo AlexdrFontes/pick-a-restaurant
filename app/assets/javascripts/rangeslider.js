@@ -23,7 +23,9 @@ function updateSlider(passObj) {
   var nextObj = obj.next();
   nextObj.find("span.bar-btn").css("left", percentage + "%");
   nextObj.find("span.bar > span").css("width", percentage + "%");
-  nextObj.find("span.bar-btn > span").text(distance + "km");
+
+  nextObj.find("span.bar-btn > span").text(distance + " km");
+
 };
 
 

@@ -1,4 +1,5 @@
 import "bootstrap";
+import { getCurrentLocation };
 // import { autocomplete } from 'autocomplete';
 // autocomplete();
 // import "range_slider";
