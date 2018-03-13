@@ -104,6 +104,21 @@ def get_place_lat_lng(agent)
  return lat_lng_array
 end
 
+def get_place_photos(agent)
+  urls_array = []
+  a = agent.search(".item.respageMenu-item.photosTab").attr('href').value
+  agent_inside = Mechanize.new
+  agent_inside.user_agent_alias = 'Mac Safari'
+  ## We enter the page for each link and save the data we want
+  current_agent = agent_inside.get(a)
+  current_agent.search(".photobox.pos-relative.left.mb10.js-heart-container.thumbContainer")[1..6].each do |link|
+
+    a = link.search(".res-photo-thumbnail.thumb-load").attr('data-original').value.match(/(^.*)(?=\?)/).to_s
+    urls_array << a
+  end
+  return urls_array
+end
+
 
 def save(data)
   File.open(FILE_PATH, "w+") do |f|
@@ -117,7 +132,7 @@ places = []
 agent = Mechanize.new
 agent.user_agent_alias = 'Mac Safari'
 
-limit = 80 # page limit in url
+limit = 1 # page limit in url
 for page_number in 1..limit
   zom_url = URI "https://www.zomato.com/grande-lisboa/best-dine-out-in-lisboa?ref_page=zone&page=#{page_number}"
 
@@ -143,7 +158,8 @@ for page_number in 1..limit
         schedule: schedule,
         meal_types: get_type_of_meal(current_agent, schedule),
         latitude: latitude_longitude_array[0],
-        longitude: latitude_longitude_array[1]
+        longitude: latitude_longitude_array[1],
+        photos: get_place_photos(current_agent)
       }
       places << place
   end
