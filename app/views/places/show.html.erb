@@ -2,7 +2,58 @@
 <% a = @place %>
 <div class="col-xs-12" style= "padding: 0px">
   <div class= "show-all">
-    <div class="banner-show-top" style="background-image: url(<%= a.featured_image%>);">
+   <!--  <div class="banner-show-top" style="background-image: url(<%= a.featured_image%>);"> -->
+
+
+<!-- #######################CAROUSEL INIT -->
+    <div class="carousel" style= "margin-top: 0px">
+      <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-interval="false" style= "margin-top: 0px">
+        <div class="carousel-inner" role="listbox">
+          <div class="item active" data-name="featured">
+            <div class="carousel-caption">
+              <div class="banner-show-top" style="background-image: url(<%= a.featured_image%>);     z-index: -1000;"></div>
+            </div>
+          </div>
+          <div class="item" data-name="photo-0">
+            <div class="carousel-caption">
+              <div class="banner-show-top" style="background-image: url(<%= a.photos[0].url%>); z-index: -1000;"></div>
+            </div>
+          </div>
+          <div class="item" data-name="photo-1">
+            <div class="carousel-caption">
+              <div class="banner-show-top" style="background-image: url(<%= a.photos[1].url%>);"></div>
+            </div>
+          </div>
+          <div class="item" data-name="photo-2">
+            <div class="carousel-caption">
+              <div class="banner-show-top" style="background-image: url(<%= a.photos[2].url%>);"></div>
+            </div>
+          </div>
+          <div class="item" data-name="photo-3">
+            <div class="carousel-caption">
+              <div class="banner-show-top" style="background-image: url(<%= a.photos[3].url%>);"></div>
+            </div>
+          </div>
+          <div class="item" data-name="photo-4">
+            <div class="carousel-caption">
+              <div class="banner-show-top" style="background-image: url(<%= a.photos[4].url%>);"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+
+<!-- #######################CAROUSEL END-->
+
+
       <%=  link_to (image_tag "http://res.cloudinary.com/dywzzd0as/image/upload/v1520856923/Group_2_1.svg", {class: "logo"}), root_path %>
       <div class="show-buttons">
         <a href="tel:<%= a.phone_number %>" ><%= image_tag "http://res.cloudinary.com/dywzzd0as/image/upload/v1520514037/Group_2.svg", class: "img_btn" %></a>
