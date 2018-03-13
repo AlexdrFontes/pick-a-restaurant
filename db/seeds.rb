@@ -7,6 +7,7 @@ User.destroy_all
 Photo.destroy_all
 Place.destroy_all
 
+PlacesHistory.destroy_all
 PlaceCuisineType.destroy_all
 PlaceMealType.destroy_all
 CuisineType.destroy_all
