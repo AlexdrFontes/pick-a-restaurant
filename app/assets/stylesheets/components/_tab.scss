@@ -1,6 +1,6 @@
 
 .tab-area{
-  margin-top: 5em;
+
 }
 
 .card-last{
@@ -35,8 +35,9 @@
   width: 40vw;
   color:black;
   margin-left: 1em;
-   p{
+  p{
     margin: 0;
+    color: black !important;
   }
 
 }
@@ -45,9 +46,11 @@
 
   width: 30vw;
   margin: 0;
-  color:black;
+
   p{
     margin: 0;
+    color: black !important;
+
   }
 }
 
@@ -57,6 +60,9 @@
   p{
     margin: 0;
   }
+  a{
+    color: #EB5757;
+  }
 }
 
 .mypicks-status{
@@ -64,7 +70,7 @@
   z-index: 100;
 
   a {
-  color: #469AE0;
+    color: #469AE0;
   }
   p {
     margin: 0px;
@@ -77,7 +83,7 @@
 }
 
 .img_btn_2{
-width: 35px;
+  width: 35px;
 
 }
 
@@ -113,6 +119,18 @@ width: 35px;
   color : white;
   background-color: #428bca;
   padding : 5px 15px;
+
+}
+
+.nav {
+  padding-left: 0.1em;
+  a{
+    color: white;
+  }
+}
+
+.nav.nav-pills {
+  background-color: #EB5757;
 }
 
 .nav-pills > li.active > a,
@@ -121,6 +139,10 @@ width: 35px;
   background-color: #EB5757;
 }
 
+.nav-pills > li.active {
+  border-bottom: 5px solid white;
+  margin-bottom: -1px;
+}
 
 .nav-pills > li > a:hover {
   background-color: #EB5757;
