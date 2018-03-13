@@ -104,6 +104,12 @@ def get_place_lat_lng(agent)
  return lat_lng_array
 end
 
+# def get_menu_pics(agent)
+#   a = agent.search(".js-swipebox").each do |link|
+#   agent_inside = Mechanize.new
+#   agent_inside.user_agent_alias = 'Mac Safari'
+#   inside_page_link = link[:href]
+# end
 
 def save(data)
   File.open(FILE_PATH, "w+") do |f|
@@ -121,7 +127,9 @@ limit = 80 # page limit in url
 for page_number in 1..limit
   zom_url = URI "https://www.zomato.com/grande-lisboa/best-dine-out-in-lisboa?ref_page=zone&page=#{page_number}"
 
+
   # Search each link inside a card
+
   agent.get(zom_url).search(".result-title.hover_feedback").each do |link|
     ######TODO 1: will click the link and scrape data inside that link
       agent_inside = Mechanize.new
@@ -131,6 +139,7 @@ for page_number in 1..limit
       current_agent = agent_inside.get(inside_page_link)
       schedule = get_place_schedule(current_agent)
       latitude_longitude_array = get_place_lat_lng(current_agent)
+
       place = {
         name: get_place_name(current_agent),
         address: get_place_address(current_agent),
