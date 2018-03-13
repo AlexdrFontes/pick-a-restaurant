@@ -4,9 +4,8 @@
 require 'json'
 
 User.destroy_all
-Place.destroy_all
-
 PlacesHistory.destroy_all
+Place.destroy_all
 PlaceCuisineType.destroy_all
 PlaceMealType.destroy_all
 CuisineType.destroy_all
