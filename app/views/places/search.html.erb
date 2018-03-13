@@ -44,14 +44,11 @@ getLocation();
       <input class="form-control mr-sm-2" id="place_address"  type="text" name="place" action="/places/show" method="get" >
     </div>
 
-   <!--  <div class="form-group">
 
-      <p>Min. Price<input class="form-control mr-sm-2" id="min_price" type="text" name="min_price" placeholder="0" action="/places/show" method="get"></p>
-      <p>Max. Price<input class="form-control mr-sm-2" id="max_price" type="text" name="max_price" placeholder="0" action="/places/show" method="get"></p>
-    </div> -->
     <div class="form-group">
       <%= render 'range-slider' %>
     </div>
+
     <div class="form-group">
       <%= render 'double-slider' %>
     </div>
@@ -139,6 +136,11 @@ getLocation();
     </script>
 
 
+
+
+</div>
+</div>
+</div>
 
 
 <script>
