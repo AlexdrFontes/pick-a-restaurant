@@ -5,7 +5,7 @@ $(function() {
   // Initiate Slider
   $("#slider-range").slider({
     range: true,
-    min: 10,
+    min: 5,
     max: 180,
     step: 0.1,
     values: [0, 180]
