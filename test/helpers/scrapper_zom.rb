@@ -140,7 +140,7 @@ places = []
 agent = Mechanize.new
 agent.user_agent_alias = 'Mac Safari'
 
-limit = 1 # page limit in url
+limit = 80 # page limit in url
 for page_number in 1..limit
   zom_url = URI "https://www.zomato.com/grande-lisboa/best-dine-out-in-lisboa?ref_page=zone&page=#{page_number}"
 
