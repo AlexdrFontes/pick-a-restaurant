@@ -145,6 +145,8 @@
   justify-content: center;
   height: auto;
   margin-rigth: 15px;
+  margin-left: -44px;
+  margin-top: 7px;
   p{
     margin:0px;
   }
@@ -184,8 +186,7 @@
 
 .show-pay-time{
   display: flex;
-  justify-content: center;
-  padding-bottom: 10px;
+  justify-content: space-around;
 
 }
 
@@ -197,4 +198,27 @@
   cursor:pointer;
   overflow: hidden;
   outline:none;
+}
+
+#rating{
+  background-color: #EB5757;
+  color:#FFFFFF;
+  padding:3px;
+  margin-bottom:15px;
+  margin:5px;
+}
+
+.show-menu2{
+  display:flex;
+  justify-content: center;
+  height: auto;
+  margin-left: 15px;
+  margin-top: 7px;
+}
+
+.show-menu-price2{
+  display: flex;
+  justify-content: center;
+  margin-left: 17px;
+  margin-top:-12px;
 }
