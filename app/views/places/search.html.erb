@@ -124,7 +124,7 @@ getLocation();
             }, function(results, status) {
 
                 if (status == google.maps.GeocoderStatus.OK) {
-                    console.log(results[0]);
+                    console.log("address:", results[0]);
                     $("#place_address").val(results[0].formatted_address);
                 } else {
                     alert('Geocode was not successful for the following reason: ' + status);
