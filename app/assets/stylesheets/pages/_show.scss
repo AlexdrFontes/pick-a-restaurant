@@ -84,6 +84,7 @@
   padding:3px;
   margin-bottom:15px;
   margin:5px;
+  border-radius: 2px;
   p{
     margin-bottom:0px;
     font-size:15px;
@@ -160,10 +161,10 @@
   flex-direction: column;
   justify-content: space-around;
   height: 171.5px;
-  border-bottom: 1px solid #EB5757;
-  border-top: 1px solid #EB5757;
-  margin-left: 20px;
-  margin-right: 20px;
+  border-bottom: 2px solid #EB5757;
+  border-top: 2px solid #EB5757;
+  margin-left: 60px;
+  margin-right: 60px;
   height: 25vh;
   padding-top: 5px;
 }
@@ -190,7 +191,7 @@
 
 .show-down-btn{
 
-  background-color: Transparent;
+  background-color: transparent;
   background-repeat:no-repeat;
   border: none;
   cursor:pointer;
