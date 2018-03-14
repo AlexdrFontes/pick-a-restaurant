@@ -36,18 +36,20 @@
             <% @places.each do |place| %>
             <%  if place.places_histories.first.rejected == true  %>
             <div class="card-last mypicks">
-              <div class="mypicks-photo" style="background-image: url(<%= place.featured_image%>);">
+              <div class="last-photo" style="background-image: url(<%= place.featured_image%>);">
               </div>
               <div class="mypicks-name">
                 <p> <%= place.name %></p>
               </div>
-              <div class="mypicks-status">
-                <p><%= link_to "Unsave", places_save_id_path(place.id) %></p>
-              </div>
-              <%= link_to "", places_show_id_path(place.id), :class => "card-link" %>
+
               <div class="mypicks-phone">
                 <a href="tel:<%= place.phone_number %>" ><%= image_tag "http://res.cloudinary.com/dywzzd0as/image/upload/v1520514037/Group_2.svg", class: "img_btn_2" %></a>
               </div>
+              <div class="mypicks-status">
+                <p><%= link_to "X", places_save_id_path(place.id) %></p>
+              </div>
+              <%= link_to "", places_show_id_path(place.id), :class => "card-link" %>
+
             </div>
 
             <% end  %>

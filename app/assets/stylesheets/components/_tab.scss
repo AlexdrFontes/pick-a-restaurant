@@ -40,7 +40,6 @@
     margin: 0;
     color: black !important;
   }
-
 }
 
 .mypicks-name{
@@ -60,8 +59,9 @@
    z-index: 100;
 
   p{
-    margin: 0;
      z-index: 100;
+     padding: 1em !important;
+     margin-left: 15px;
   }
   a{
     color: #EB5757;
@@ -70,11 +70,11 @@
 }
 
 .mypicks-status{
-  width: 10vw;
+  width: auto;
   z-index: 100;
 
   a {
-    color: #469AE0;
+    color: #EB5757;
      z-index: 100;
   }
   p {
@@ -84,7 +84,7 @@
 }
 
 .mypicks-phone{
-  width: 5vw;
+  width: auto;
   z-index: 200;
 }
 
@@ -92,10 +92,6 @@
   width: 35px;
 
 }
-
-// p {
-//   margin:0;
-// }
 
 #exTab1 .tab-content {
   color : white;
@@ -148,6 +144,7 @@
 .nav-pills > li.active {
   border-bottom: 5px solid white;
   margin-bottom: -1px;
+  z-index: 0;
 }
 
 .nav-pills > li > a:hover {
@@ -185,4 +182,13 @@ li {
 
 a:hover{
   text-decoration: none;
+}
+
+.tab-content {
+    padding-top: 20px !important;
+}
+
+
+.mypicks{
+  justify-content: space-around !important;
 }
