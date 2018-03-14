@@ -1,5 +1,5 @@
 class PlacesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:search, :show, :show_id]
+  skip_before_action :authenticate_user!, only: [:search, :show, :show_id ]
 
   def search
     @places = Place.all
