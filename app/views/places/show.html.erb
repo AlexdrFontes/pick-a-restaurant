@@ -1,3 +1,7 @@
+<% content_for :meta_title, "#{@place.name} is on #{DEFAULT_META["meta_product_name"]}" %>
+<% content_for :meta_description, @place.name %>
+<% content_for :meta_image, @place.featured_image %>
+
 <%= render 'shared/menu' %>
 <% a = @place %>
 <div class="col-xs-12" style= "padding: 0px">
