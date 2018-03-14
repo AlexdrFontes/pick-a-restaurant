@@ -6,7 +6,7 @@
     <%= form_for("search", :url => { :action => "show" }, :html => { :method => "GET"}) do |f| %>
     <input type="hidden" name="meal_type" value=<%= @meal_type %> >
     <div class="form-group cuisine">
-      <%= f.select( :cuisine_types, @unique_types, {}, {multiple: true, id: "selectize", placeholder: "CUISINE"}) %>
+      <%= f.select( :cuisine_types, @unique_types, {}, {multiple: true, id: "selectize", placeholder: "Cuisine Types"}) %>
     </div>
     <div class="form-group">
       <input class="form-control mr-sm-2" id="place_address"  type="text" name="place" action="/places/show" method="get" placeholder="Try &quot;Cais do Sodré&quot;">
@@ -15,6 +15,9 @@
       <div class="slider-margin">
         <%= render 'range-slider' %>
       </div>
+    </div>
+    <div class= "info-cost">
+      <p>Average cost for two:</p>
     </div>
     <div class="form-group">
       <%= render 'double-slider' %>
@@ -26,6 +29,17 @@
     <% end %>
   </div>
 </div>
+
+</div>
+    <div class="banner-botton-text-search">
+      <p>All ok?</p>
+      <p>Apply Filters</p>
+    </div>
+</div>
+
+
+
+
 <script type="text/javascript" charset="utf-8">
   $(document).ready(function() {
     var currgeocoder;
@@ -37,6 +51,7 @@
     });
     //Get geo location result
     function processGeolocationResult(position) {
+
              html5Lat = position.coords.latitude; //Get latitude
              html5Lon = position.coords.longitude; //Get longitude
              html5TimeStamp = position.timestamp; //Get timestamp
