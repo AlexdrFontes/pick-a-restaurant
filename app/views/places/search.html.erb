@@ -1,14 +1,14 @@
 <%= render 'shared/menu' %>
-<div class="main-container">
-<div class="banner-container no-pad">
+<div class="main-container-search-back">
+<div class="banner-container-search-main no-pad">
   <%=  link_to (image_tag "http://res.cloudinary.com/dywzzd0as/image/upload/v1520856923/Group_2_1.svg", {class: "logo"}), root_path %>
 
   <div class="details">
     <%= form_for("search", :url => { :action => "show" }, :html => { :method => "GET"}) do |f| %>
 
     <input type="hidden" name="meal_type" value=<%= @meal_type %> >
-    <div class="form-group">
-      <%= f.select( :cuisine_types, @unique_types, {}, {multiple: true, id: "selectize"}) %>
+    <div class="form-group cuisine">
+      <%= f.select( :cuisine_types, @unique_types, {}, {multiple: true, id: "selectize", placeholder: "CUISINE"}) %>
     </div>
 
 
