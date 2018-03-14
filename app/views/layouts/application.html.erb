@@ -2,6 +2,7 @@
 <html>
 <head>
   <title><%= meta_title %></title>
+
   <meta name="description" content="<%= meta_description %>">
   <link rel="icon" href="http://res.cloudinary.com/dywzzd0as/image/upload/v1520513208/location.svg">
   <!-- Facebook Open Graph data -->
@@ -24,6 +25,17 @@
   <%= stylesheet_link_tag 'application', media: 'all' %>
   <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   <script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script>
+    $('.body-loading').hide();
+
+    setTimeout(function(){
+
+        $('.loader').addClass('loaded');
+        $('.body-loading').removeClass('body-loading');
+    }, 3000);
+
+
+</script>
   <!--  <script src="//code.jquery.com/mobile/1.5.0-alpha.1/jquery.mobile-1.5.0-alpha.1.min.js"></script> -->
 </head>
 <body>
