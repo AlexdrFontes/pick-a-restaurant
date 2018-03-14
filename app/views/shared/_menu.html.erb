@@ -24,19 +24,16 @@
 
 <div class="navbar-wagon-item">
   <div class="dropdown">
-   <i class="fas fa-bars menu avatar dropdown-toggle"  data-toggle="dropdown" id="navbar-wagon-menu"></i>
-   <ul class="dropdown-menu dropdown-menu-left navbar-wagon-dropdown-menu">
-
-
-    <%  if current_user.nil? %>
-    <li><%= link_to 'Log in', new_user_session_path%></li>
-    <li><%= link_to 'Sign up', new_user_registration_path %></li>
-    <%else %>
-    <li><%= link_to 'Dashboard', places_my_places_path %></li>
-    <li><%= link_to 'Log out', destroy_user_session_path, method: :delete %></li>
-    <%end  %>
-
-  </ul>
-</div>
+    <i class="fas fa-bars menu avatar dropdown-toggle"  data-toggle="dropdown" id="navbar-wagon-menu"></i>
+    <ul class="dropdown-menu dropdown-menu-left navbar-wagon-dropdown-menu">
+      <%  if current_user.nil? %>
+        <li><%= link_to 'Log in', new_user_session_path%></li>
+        <li><%= link_to 'Sign up', new_user_registration_path %></li>
+      <%else %>
+        <li><%= link_to 'Dashboard', places_my_places_path %></li>
+        <li><%= link_to 'Log out', destroy_user_session_path, method: :delete %></li>
+      <%end  %>
+    </ul>
+  </div>
 </div>
 
