@@ -1,5 +1,5 @@
-<% content_for :meta_title, "#{@place.name} is on #{DEFAULT_META["meta_product_name"]}" %>
-<% content_for :meta_description, @place.name %>
+<% content_for :meta_title, "#{@place.name} is on Pick" %>
+<% content_for :meta_description, "Don't miss this great place" %>
 <% content_for :meta_image, @place.featured_image %>
 
 <%= render 'shared/menu' %>
@@ -115,40 +115,38 @@
           <% end %>
         </div>
         <% end %>
-        <div class="show-menu-price">
+        <div class="show-menu-price2">
           <div class="show-price">
             <p class="price"><%=a.average_cost_for_two %>€ </p>
             <%= image_tag "http://res.cloudinary.com/dywzzd0as/image/upload/v1520520005/people.svg", {class: "people-icon"}%>
-          </div>
-          <div class="show-menu">
-            <%= link_to image_tag("menu.svg", class: "menu-icon"), a.featured_image, :target => :blank %>
-            <p class="menu-text">CHECK ME</p>
-          </div>
-        </div>
-        <div class="show-menu-price2">
-          <div class="show-price">
-            <strong><p id="rating"><%=a.user_rating%></p></strong>
           </div>
           <div class="show-menu2">
             <%= image_tag "clock.svg", {class: "clock-icon"}%>
             <p class="price"><%=a.opening_time%> - <%=a.closing_time%></p>
           </div>
         </div>
+        <div class="show-menu-price">
+          <div class="show-menu">
+            <p class="menu-text" style="font-size: 13px"><%=a.address %></p>
+          </div>
+        </div>
+      </div>
+      <div class="show-rate">
+        <strong><p id="rating"><%=a.user_rating%></strong> /5</p>
       </div>
       <div onclick=location=URL><%= image_tag("http://res.cloudinary.com/dywzzd0as/image/upload/v1520514430/again_button.png", class: "show-btn-again")%>
       </div>
     </div>
   </div>
 </div>
-<div id="loader-wrapper">
+<!-- <div id="loader-wrapper">
     <div id="loader">
       <div id="content">
-         <%= image_tag "http://res.cloudinary.com/dywzzd0as/image/upload/v1520523777/Ellipse.svg", {class: "button_pick"} %>
-      </div>
+
     </div>
     <div class="loader-section section-left"></div>
     <div class="loader-section section-right"></div>
-</div>
+</div> -->
 
 <script>
 // function showLoading() {

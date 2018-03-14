@@ -7,7 +7,7 @@ $(function() {
     range: true,
     min: 5,
     max: 180,
-    step: 0.1,
+    step: 5,
     values: [0, 180]
   });
 
@@ -15,8 +15,8 @@ $(function() {
   $('.ui-slider-range').append($('.range-wrapper-left'));
   $('.ui-slider-range').append($('.range-wrapper-right'));
   // Apply initial values to the range container
-  $('.range-left').html('<span class="range-value" name="min" id="min" action="/places/show" method="get" type="range">' + $('#slider-range').slider("values", 0).toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,") + ' €</span>');
-  $('.range-right').html('<span class="range-value" name="max" id="max" action="/places/show" method="get" type="range">' + $('#slider-range').slider("values", 1).toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,") + ' €</span>');
+  $('.range-left').html('<span class="range-value" name="min" id="min" action="/places/show" method="get" type="range">' + $('#slider-range').slider("values", 0).toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,") + '€</span>');
+  $('.range-right').html('<span class="range-value" name="max" id="max" action="/places/show" method="get" type="range">' + $('#slider-range').slider("values", 1).toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,") + '€</span>');
   // $('.range-wrapper-right').html('<input type="hidden" name="min_price" value='$('#slider-range').slider("values", 0).toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,")'></input>');
   $('.range-left-hidden').html('<input type="hidden" naction="/places/show" method="get" ame="min_price" value=' + $('#slider-range').slider("values", 0).toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,") + '></input>');
   $('.range-right-hidden').html('<input type="hidden" action="/places/show" method="get" name="max_price" value=' + $('#slider-range').slider("values", 1).toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,") + '></input>');
@@ -42,8 +42,8 @@ $(function() {
 
       // Update the range container values upon sliding
 
-      $('.range-left').html('<span class="range-value" name="min_price" id="min_price" action="/places/show" method="get" type="range">' + ui.values[0].toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,") + ' €</span>');
-      $('.range-right').html('<span class="range-value" name="max_price" id="max_price" action="/places/show" method="get" type="range">' + ui.values[1].toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,") + ' €</span>');
+      $('.range-left').html('<span class="range-value" name="min_price" id="min_price" action="/places/show" method="get" type="range">' + ui.values[0].toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,") + '€</span>');
+      $('.range-right').html('<span class="range-value" name="max_price" id="max_price" action="/places/show" method="get" type="range">' + ui.values[1].toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,") + '€</span>');
       $('.range-left-hidden').html('<input type="hidden" action="/places/show" method="get" name="min_price" value=' + $('#slider-range').slider("values", 0).toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,") + '></input>');
       $('.range-right-hidden').html('<input type="hidden" action="/places/show" method="get" name="max_price" value=' + $('#slider-range').slider("values", 1).toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,") + '></input>');
       // Get old value

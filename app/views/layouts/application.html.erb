@@ -3,7 +3,7 @@
 <head>
   <title><%= meta_title %></title>
   <meta name="description" content="<%= meta_description %>">
-
+  <link rel="icon" href="http://res.cloudinary.com/dywzzd0as/image/upload/v1520513208/location.svg">
   <!-- Facebook Open Graph data -->
   <meta property="og:title" content="<%= meta_title %>" />
   <meta property="og:type" content="website" />
@@ -11,17 +11,13 @@
   <meta property="og:image" content="<%= meta_image %>" />
   <meta property="og:description" content="<%= meta_description %>" />
   <meta property="og:site_name" content="<%= meta_title %>" />
-
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <link rel="icon" href="http://res.cloudinary.com/dywzzd0as/image/upload/v1520513208/location.svg">
   <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
-
- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
   <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-
-
   <%= csrf_meta_tags %>
   <%= action_cable_meta_tag %>
   <%= stylesheet_link_tag 'application', media: 'all' %>
@@ -29,7 +25,6 @@
   <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   <script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
   <!--  <script src="//code.jquery.com/mobile/1.5.0-alpha.1/jquery.mobile-1.5.0-alpha.1.min.js"></script> -->
-
 </head>
 <body>
   <%= render 'shared/flashes' %>
