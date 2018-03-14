@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  has_many :places_histories
+  has_many :places_histories, dependent: :destroy
   has_many :places, through: :places_histories
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable

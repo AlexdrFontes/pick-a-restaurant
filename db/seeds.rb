@@ -4,10 +4,12 @@
 require 'json'
 
 User.destroy_all
+PlacesHistory.destroy_all
 Place.destroy_all
 PlaceCuisineType.destroy_all
 PlaceMealType.destroy_all
 CuisineType.destroy_all
+Photo.destroy_all
 MealType.destroy_all
 
 def associate_cuisine(place, cuisine_types)
@@ -21,6 +23,13 @@ def associate_meal(place, meal_types)
   meal_types.each do |meal|
    c = MealType.find_or_create_by(name: meal)
     place.place_meal_types.create(meal_type: c)
+  end
+end
+
+def associate_photos(place, photos)
+  photos.each do |photo|
+    # m = Photo.create(url: photo)
+    place.photos.create(place: place, url:photo)
   end
 end
 
@@ -48,5 +57,6 @@ data.each do |element|
         phone_number: element['phone_number'])
     associate_cuisine(a, element['cuisines'])
     associate_meal(a, element['meal_types'])
+    associate_photos(a, element['photos'])
 end
 
