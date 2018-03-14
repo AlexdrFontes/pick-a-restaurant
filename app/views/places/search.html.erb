@@ -9,7 +9,7 @@
       <%= f.select( :cuisine_types, @unique_types, {}, {multiple: true, id: "selectize", placeholder: "CUISINE"}) %>
     </div>
     <div class="form-group">
-    <input class="form-control mr-sm-2" id="place_address"  type="text" name="place" action="/places/show" method="get" >
+      <input class="form-control mr-sm-2" id="place_address"  type="text" name="place" action="/places/show" method="get" placeholder="Try &quot;Cais do Sodré&quot;">
     </div>
     <div class="form-group">
       <div class="slider-margin">
@@ -21,7 +21,7 @@
     </div>
     <div class="button-pick">
       <button class="btn btn-lg btn-start" type="submit" method="get">
-        <%= image_tag "http://res.cloudinary.com/dywzzd0as/image/upload/v1520523777/Ellipse.svg", {class: "button_pick"} %>
+        <%= image_tag "http://res.cloudinary.com/dywzzd0as/image/upload/v1520857031/ic_done_white_24px.svg", {class: "button_pick", style: "width: 50px;"} %>
       </button>
     <% end %>
   </div>
