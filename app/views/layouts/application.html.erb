@@ -5,7 +5,7 @@
 
   <meta name="description" content="<%= meta_description %>">
   <%= favicon_link_tag %>
-  <meta property="og:image" content="<%= image_url(meta_image) %>" />
+  <meta property="og:image" content="<%= yield(:meta_image) == '' ? image_url('background.jpg') : yield(:meta_image) %>" />
   <meta property="og:title" content="<%= meta_title %>" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="<%= request.original_url %>" />
