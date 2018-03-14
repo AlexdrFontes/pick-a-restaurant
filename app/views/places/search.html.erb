@@ -23,7 +23,7 @@
       <%= render 'double-slider' %>
     </div>
     <div class="button-pick">
-      <button class="btn btn-lg btn-start" type="submit" method="get">
+      <button class="btn btn-lg btn-start" type="submit" method="get" id="button-pick">
         <%= image_tag "http://res.cloudinary.com/dywzzd0as/image/upload/v1520857031/ic_done_white_24px.svg", {class: "button_pick", style: "width: 50px;"} %>
       </button>
     <% end %>
@@ -80,11 +80,14 @@
                 }
             });
          }
+
+  $('#selectize-selectized').on("focus", function(){
+    $('#button-pick').addClass("hidden");
+  })
+
+  $('#selectize-selectized').on("focusout", function(){
+    $('#button-pick').removeClass("hidden");
+  })
     });
 </script>
-
-
-
-
-
 

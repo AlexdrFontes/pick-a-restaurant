@@ -1,9 +1,11 @@
+
 <% content_for :meta_title, "#{@place.name} is on Pick" %>
 <% content_for :meta_description, "Don't miss this great place" %>
 <% content_for :meta_image, @place.featured_image %>
 
 <%= render 'shared/menu' %>
 <% a = @place %>
+
 <div class="col-xs-12" style= "padding: 0px">
   <div class= "show-all">
    <!--  <div class="banner-show-top" style="background-image: url(<%= a.featured_image%>);"> -->
@@ -139,33 +141,86 @@
     </div>
   </div>
 </div>
-<!-- <div id="loader-wrapper">
-    <div id="loader">
-      <div id="content">
-
-    </div>
-    <div class="loader-section section-left"></div>
-    <div class="loader-section section-right"></div>
-</div> -->
+<div class="loader">
+      <button class="btn btn-lg btn-start loading" type="submit" method="get" id="button-pick">
+        <%= image_tag "http://res.cloudinary.com/dywzzd0as/image/upload/v1520523777/Ellipse.svg", {class: "button_pick", style: "width: 50px;"} %>
+      </button>
+</div>
 
 <script>
-// function showLoading() {
-//     $("#loader-wrapper").show();
-// }
+    $(document).ready(function() {
 
-// function hideLoading() {
-//     $("#loader-wrapper").hide();
-// }
+    setTimeout(function(){
 
+        $('.loader').addClass('loaded');
+        $('.body-loading').removeClass('body-loading');
+    }, 3000);
 
+});
 
-//   $(document).ready(function() {
-
-//     setTimeout(function(){
-//         $('body').addClass('loaded');
-//         $('h1').css('color','#222222');
-//     }, 3000);
-
-// });
 </script>
+
+<style>
+
+.body-loading {
+  display: none;
+}
+
+.loader {
+  position: fixed;
+  align-content: center;
+  display: grid;
+  height: 100vh;
+  width: 100vw;
+  justify-content: center;
+  /*background-color: white;*/
+  background-image: linear-gradient(rgba(78,78,78,0.8),rgba(78,78,78,.8)), url("http://res.cloudinary.com/dywzzd0as/image/upload/v1521020854/background_blur.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 60%;
+  z-index: 1000;
+}
+
+.loaded {
+  display: none;
+}
+
+.loading {
+  background-color: #dd6666;
+  border-radius: 50%;
+  height: 200px;
+  position: relative;
+  width: 200px;
+
+  animation: grow 0.75s ease-in-out alternate infinite;
+}
+
+.loading img {
+  animation: grow-img 0.75s ease-in-out alternate infinite;
+}
+
+@keyframes grow {
+  0% {
+    height: 60px;
+    width: 60px;
+  }
+  100% {
+    height: 300px;
+    width: 300px;
+  }
+}
+
+
+@keyframes grow-img {
+  0% {
+    height: 25px;
+    width: 25px;
+  }
+  100% {
+    height: 150px;
+    width: 150px;
+  }
+}
+
+</style>
 
