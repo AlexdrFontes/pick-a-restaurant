@@ -1,5 +1,6 @@
 
 .tab-area{
+  margin: 0.5em;
 
 }
 
@@ -56,12 +57,15 @@
 
 .last-status{
   width: 15vw;
-  z-index: 100;
+   z-index: 100;
+
   p{
     margin: 0;
+     z-index: 100;
   }
   a{
     color: #EB5757;
+      z-index: 100;
   }
 }
 
@@ -71,9 +75,11 @@
 
   a {
     color: #469AE0;
+     z-index: 100;
   }
   p {
     margin: 0px;
+     z-index: 100;
   }
 }
 
@@ -170,6 +176,8 @@ li {
   width: 100%;
   background: black;
   opacity: 0;
+   z-index: 90;
+
 }
 .card-link:hover {
   opacity: 0.1;

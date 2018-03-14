@@ -11,6 +11,7 @@ class PlacesController < ApplicationController
  end
 
   def show
+
     @places = Place.all
     @cuisine_types = CuisineType.all
     @unique_types = @cuisine_types.select(:id,:name).uniq{|a| a.name}.map{ |a| [a.name,a.id]}
@@ -56,8 +57,10 @@ class PlacesController < ApplicationController
   end
 
   def show_id
+
     @place = Place.find(params[:id])
     render "show"
+
   end
 
   def my_places
