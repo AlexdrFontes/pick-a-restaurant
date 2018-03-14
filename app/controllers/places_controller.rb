@@ -4,7 +4,8 @@ class PlacesController < ApplicationController
   def search
     @places = Place.all
     @cuisine_types = CuisineType.all
-    @unique_types = @cuisine_types.select(:id,:name).uniq{|a| a.name}.map{ |a| [a.name,a.id]}
+    @unique_types = @cuisine_types.select(:id,:name).uniq{|a| a.name}.map{ |a| [a.name.upcase,a.id]}
+    @unique_types = @unique_types
     @meal_type = params[:meal_type]
 
  end
