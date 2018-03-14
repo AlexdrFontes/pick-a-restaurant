@@ -1,2 +1,31 @@
-<h1>Errors#internal_server_error</h1>
-<p>Find me in app/views/errors/internal_server_error.html.erb</p>
+<div class="main-container-search-back">
+  <div class="banner-container-search-main no-pad">
+    <div class = "title-home">
+      <%= image_tag "http://res.cloudinary.com/dywzzd0as/image/upload/v1520515481/logo.svg", {class: "logo-home"}%>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div class="error-message">
+      <p> With those filters we are unable to pick a place for you. We kindly ask you to redo your search.</p>
+    </div>
+    <br>
+    <div class="error-message">
+      <strong><p> Choose a diferent type of meal, cuisine or a bigger search radius.</p></strong>
+    </div>
+    <div class="button-pick">
+    <button class="btn btn-lg btn-start" id="a" type="button" onclick="goToPlace()">
+      <%= image_tag "http://res.cloudinary.com/dywzzd0as/image/upload/v1521037958/large-exclamation-mark.svg", {class: "button_pick"} %>
+    </button>
+    </div>
+  </div>
+    <div class="banner-botton-text">
+      <p>Go to Home and re-search</p>
+    </div>
+</div>
+
+<script>
+function goToPlace() {
+     location.href = "/";
+    };
+ </script>
