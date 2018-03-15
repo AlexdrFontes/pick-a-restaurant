@@ -88,8 +88,9 @@
 
 .show-rate {
   display: flex;
-  justify-content: center;
-  height: auto;
+  justify-content: space-around;
+  height: 8vh;
+  width: 100%
 }
 
 .show-meal{
@@ -255,10 +256,4 @@ a {
   z-index: 1000;
 }
 
-.show-rate{
-    height: 8vh;
-    margin-left: 20px;
-    margin-right: 20px;
-    display: flex;
-    justify-content: space-around;
-}
+
