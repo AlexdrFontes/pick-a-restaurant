@@ -2,7 +2,7 @@
 <html>
 <head>
   <title><%= meta_title %> - <%= meta_description %></title>
-
+  <meta name="mobile-web-app-capable" content="yes">
   <meta name="description" content="<%= meta_description %>">
   <%= favicon_link_tag %>
   <meta property="og:image" content="<%= yield(:meta_image) == '' ? image_url('background.jpg') : yield(:meta_image) %>" />
