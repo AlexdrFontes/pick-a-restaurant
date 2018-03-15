@@ -186,6 +186,8 @@ a:hover{
 
 .tab-content {
     padding-top: 20px !important;
+    overflow-y: scroll;
+    height: calc(100vh - 90px - 41px - 0.5em);
 }
 
 
