@@ -41,7 +41,7 @@
   padding-left: 5px;
   padding-right: 5px;
   font-weight: bold;
-  height: 15vh;
+  height: 17vh;
   display: flex;
   align-items: center;
   h1{
@@ -229,7 +229,7 @@
   border-radius: 5%;
   position: absolute;
   border: 1px solid #EB5757;
-  bottom: 41px;
+  bottom: 21px;
   font-size: 13px;
   // margin-bottom:15px;
   // margin:5px;
@@ -253,4 +253,10 @@
 
 a {
   z-index: 1000;
+}
+
+.show-rate{
+    height: 8vh;
+    margin-left: 20px;
+    margin-right: 20px;
 }
