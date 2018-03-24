@@ -57,8 +57,12 @@ class PlacesController < ApplicationController
       current_user.places_histories.each { |place| @id << place.place_id }
 
       if !@id.include? @place.id
-        current_user.places_histories[0].destroy
-        @place.places_histories.create(user: current_user)
+        if !current_user.places_histories[0].nil?
+          current_user.places_histories[0].destroy
+          @place.places_histories.create(user: current_user)
+        else
+          @place.places_histories.create(user: current_user)
+        end
       end
 
     end
